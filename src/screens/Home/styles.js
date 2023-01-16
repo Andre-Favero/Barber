@@ -23,6 +23,11 @@ export const ImageArea = styled.View`
   margin-bottom: 20px;
   margin-top: 10px;
 `;
+export const ImageHomepage = styled.Image`
+  width: 100%;
+  height: 100%;
+`;
+
 export const ButtonArea = styled.View`
   width: 100%;
   height: 90px;
