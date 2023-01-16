@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from 'react';
 import {
   Container,
   SearchArea,
@@ -11,14 +11,14 @@ import {
   ImagePreload,
   ImagePreloadArea,
   ImagePreloadlarge,
-} from "./styles";
-import BarberItem from "../../components/BarberItem";
-import api from "../../api";
-import { Alert } from "react-native";
+} from './styles';
+import BarberItem from '../../components/BarberItem';
+import api from '../../api';
+import {Alert} from 'react-native';
 
 export default () => {
-  const [searchText, setSearchText] = useState("");
-  const [textShow, setTextShow] = useState("");
+  const [searchText, setSearchText] = useState('');
+  const [textShow, setTextShow] = useState('');
   const [loading, setLoading] = useState(false);
   const [EmptyList, setEmptyList] = useState(false);
   const [NotEmptyList, setNotEmptyList] = useState(false);
@@ -32,9 +32,9 @@ export default () => {
     setNotEmptyList(false);
     setList([]);
 
-    if (searchText !== "") {
+    if (searchText !== '') {
       let res = await api.search(searchText);
-      if (res.error === "") {
+      if (res.error === '') {
         if (res.list.length > 0) {
           setList(res.list);
           setNotEmptyList(true);
@@ -44,7 +44,7 @@ export default () => {
           setTextShow(searchText);
         }
       } else {
-        Alert.alert("Error " + res.error);
+        Alert.alert('Error ' + res.error);
       }
 
       setLoading(false);
@@ -61,7 +61,7 @@ export default () => {
           placeholder="Digite o nome do barbeiro"
           placeholderTextColor="#999"
           value={searchText}
-          onChangeText={(t) => setSearchText(t)}
+          onChangeText={t => setSearchText(t)}
           onSubmitEditing={searchBarber}
           returnKeyType="search"
           autoFocus
@@ -72,13 +72,13 @@ export default () => {
       <Scroller>
         {imageEmpty && (
           <ImagePreloadArea>
-            <ImagePreload source={require("../../assets/Search.png")} />
+            <ImagePreload source={require('../../assets/Search.png')} />
           </ImagePreloadArea>
         )}
         {loading && (
           <>
             <WarningTextEmptyList>
-              Buscando por{" "}
+              Buscando por{' '}
               <WarningTextEmptyListBold>{textShow}</WarningTextEmptyListBold>
             </WarningTextEmptyList>
             <LoadingIcon size="large" color="#fff" />
@@ -88,12 +88,12 @@ export default () => {
         {EmptyList && (
           <>
             <WarningTextEmptyList>
-              Não conseguimos encontramos ninguém pesquisando por{" "}
+              Não conseguimos encontramos ninguém pesquisando por{' '}
               <WarningTextEmptyListBold>{textShow}</WarningTextEmptyListBold>
             </WarningTextEmptyList>
             <ImagePreloadArea>
               <ImagePreloadlarge
-                source={require("../../assets/EmptyList.png")}
+                source={require('../../assets/EmptyList.png')}
               />
             </ImagePreloadArea>
           </>
