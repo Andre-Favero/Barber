@@ -1,12 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
-
+import {UserContext} from '../contexts/UserContext';
 import HomeIcon from '../assets/home.svg';
 import SearchIcon from '../assets/search.svg';
 import TodayIcon from '../assets/today.svg';
 import FavoriteIcon from '../assets/favorite.svg';
-import AccountIcon from '../assets/account.svg';
 
 const TabArea = styled.View`
   height: 60px;
@@ -35,8 +34,16 @@ const TextTab = styled.Text`
   font-size: 10px;
   color: #ddd;
 `;
+const PerfilAvatar = styled.Image`
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  border: 1px solid ${props => (props.state === 4 ? '#fc5F0F' : 'transparent')};
+`;
 
 export default ({state, navigation}) => {
+  const {state: user} = useContext(UserContext);
+
   const goTo = screenName => {
     navigation.navigate(screenName);
   };
@@ -86,12 +93,9 @@ export default ({state, navigation}) => {
         <TextTab>Favoritos</TextTab>
       </TabItem>
 
-      <TabItem onPress={() => goTo('Profile')}>
-        {state.index === 4 ? (
-          <AccountIcon width="24" height="24" fill="#Fc5f0f" />
-        ) : (
-          <AccountIcon width="24" height="24" fill="#FFF" />
-        )}
+      <TabItem activeOpacity={0.5} onPress={() => goTo('Profile')}>
+        <PerfilAvatar state={state.index} source={{uri: user.avatar}} />
+
         <TextTab>Perfil</TextTab>
       </TabItem>
     </TabArea>
