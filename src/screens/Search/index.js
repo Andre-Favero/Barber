@@ -79,7 +79,7 @@ export default () => {
           <>
             <WarningTextEmptyList>
               Buscando por{' '}
-              <WarningTextEmptyListBold>{textShow}</WarningTextEmptyListBold>
+              <WarningTextEmptyListBold>{searchText}</WarningTextEmptyListBold>
             </WarningTextEmptyList>
             <LoadingIcon size="large" color="#fff" />
           </>
