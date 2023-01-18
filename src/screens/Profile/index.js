@@ -1,10 +1,16 @@
-import React from 'react';
-import {Text, Button} from 'react-native';
-import {Container} from './styles';
+import React, {useState} from 'react';
+import {
+  Container,
+  ImagePreloadlarge,
+  Logout,
+  TextButton,
+  ButtonArea,
+} from './styles';
 import api from '../../api';
 import {useNavigation} from '@react-navigation/native';
 
 export default () => {
+  const [profile, setProfile] = useState(true);
   const navigation = useNavigation();
   const handleLogout = async () => {
     await api.logout();
@@ -14,8 +20,14 @@ export default () => {
   };
   return (
     <Container>
-      <Text>Profile</Text>
-      <Button title="sair" onPress={handleLogout} />
+      {profile && (
+        <ImagePreloadlarge source={require('../../assets/profile.png')} />
+      )}
+      <ButtonArea>
+        <Logout onPress={handleLogout} activeOpacity={0.8}>
+          <TextButton>Sair</TextButton>
+        </Logout>
+      </ButtonArea>
     </Container>
   );
 };
