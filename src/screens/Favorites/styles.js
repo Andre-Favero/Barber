@@ -1,3 +1,64 @@
 import styled from 'styled-components';
 
-export const Container = styled.SafeAreaView``;
+export const Container = styled.SafeAreaView`
+  flex: 1;
+  background-color: #111;
+`;
+export const HeaderArea = styled.View`
+  height: 50px;
+  justify-content: center;
+  padding: 0 20px;
+`;
+
+export const HeaderTitle = styled.Text`
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+`;
+
+export const Scroller = styled.ScrollView`
+  flex: 1;
+  padding: 0 20px;
+`;
+
+export const LoadingIcon = styled.ActivityIndicator`
+  margin-top: 30px;
+`;
+
+export const ListArea = styled.View`
+  margin-top: 20px;
+  margin-bottom: 20px;
+`;
+
+export const WarningTextEmptyList = styled.Text`
+  font-size: 20px;
+  color: #fff;
+  align-items: flex-start;
+`;
+export const WarningTextEmptyListBold = styled.Text`
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  align-items: flex-start;
+`;
+
+export const ImagePreloadArea = styled.View`
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+`;
+
+export const ImagePreload = styled.Image`
+  width: 130%;
+  height: 270px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 154px;
+`;
+export const ImagePreloadlarge = styled.Image`
+  width: 100%;
+  height: 350px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
+`;
