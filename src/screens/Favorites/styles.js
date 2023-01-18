@@ -41,24 +41,23 @@ export const WarningTextEmptyListBold = styled.Text`
   color: #fff;
   align-items: flex-start;
 `;
+export const BodyText = styled.Text`
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+`;
 
 export const ImagePreloadArea = styled.View`
   justify-content: center;
   align-items: center;
   flex: 1;
 `;
-
-export const ImagePreload = styled.Image`
-  width: 130%;
-  height: 270px;
-  align-items: center;
-  justify-content: center;
-  margin-top: 154px;
-`;
 export const ImagePreloadlarge = styled.Image`
-  width: 100%;
-  height: 350px;
+  width: 70%;
+  height: 300px;
   align-items: center;
   justify-content: center;
   margin-top: 120px;
+  margin-left: 55px;
 `;
