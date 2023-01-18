@@ -8,8 +8,9 @@ import {
   SignMessageButton,
   SignMessageButtonText,
   SignMessageButtonTextBold,
+  ImageLogin,
 } from './styles';
-import BarberLogo from '../../assets/barber.svg';
+
 import EmailIcon from '../../assets/email.svg';
 import LockIcon from '../../assets/lock.svg';
 import SignInput from '../../components/SignInput';
@@ -57,7 +58,7 @@ export default () => {
 
   return (
     <Container>
-      <BarberLogo width="100%" height="120" />
+      <ImageLogin source={require('../../assets/cadeadoLogin.png')} />
       <InputArea>
         <SignInput
           IconSvg={EmailIcon}
