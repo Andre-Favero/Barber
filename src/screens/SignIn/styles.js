@@ -12,21 +12,19 @@ export const InputArea = styled.View`
 `;
 export const CustomButton = styled.TouchableOpacity`
   height: 60px;
-  background-color: #333;
+  background-color: #fc5f0f;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
 `;
 export const CustomButtonText = styled.Text`
   font-size: 18px;
-  color: #fff;
+  color: #000;
   font-weight: bold;
 `;
 export const SignMessageButton = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 20px;
 `;
 export const SignMessageButtonText = styled.Text`
   font-size: 16px;
@@ -37,4 +35,11 @@ export const SignMessageButtonTextBold = styled.Text`
   font-size: 16px;
   color: #999;
   font-weight: bold;
+`;
+
+export const ImageLogin = styled.Image`
+  width: 90%;
+  height: 180px;
+  margin-right: 74px;
+  margin-top: -150px;
 `;
