@@ -6,7 +6,7 @@ import AboutUs from '../../components/AboutUs';
 import {HeaderArea, HeaderTitle, LoadingIcon, ListArea} from './styles';
 import api from '../../api';
 import BarberItem from '../../components/BarberItem';
-import {Alert, RefreshControl, Image} from 'react-native';
+import {Alert, RefreshControl} from 'react-native';
 
 export default () => {
   const [locationText, setLocationText] = useState('');
