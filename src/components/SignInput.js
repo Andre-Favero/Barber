@@ -13,13 +13,12 @@ const InputArea = styled.View`
 `;
 
 const Input = styled.TextInput`
-  width: 90%;
+  width: 75%;
   height: 50px;
   background-color: #1c1c1c;
   padding: 10px;
   margin: 10px;
   color: #fff;
-  font-size: 16px;
   border-radius: 5px;
   flex-direction: row;
 `;
