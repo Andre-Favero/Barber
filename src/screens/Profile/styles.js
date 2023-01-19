@@ -8,12 +8,24 @@ export const Logout = styled.TouchableOpacity`
   width: 80%;
   height: 40px;
   background-color: #1c1c1c;
-  border: 1px solid #222;
+  border: 1px solid #ed5757;
   border-radius: 5px;
   justify-content: center;
   align-items: center;
   margin-right: 20px;
   margin-left: 20px;
+`;
+export const InfoButton = styled.TouchableOpacity`
+  width: 80%;
+  height: 40px;
+  background-color: #1c1c1c;
+  border: 1px solid #555;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 15px;
 `;
 
 export const ImagePreloadlarge = styled.Image`
@@ -33,7 +45,21 @@ export const ButtonArea = styled.View`
 `;
 
 export const TextButton = styled.Text`
-  color: #ff8173;
+  color: #ed5757;
   font-size: 18px;
   font-weight: bold;
+`;
+
+export const TextButtonInfo = styled.Text`
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+`;
+export const TextTittle = styled.Text`
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px;
+  margin-top: 10px;
 `;
