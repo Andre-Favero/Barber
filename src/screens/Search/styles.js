@@ -16,6 +16,7 @@ export const SearchInput = styled.TextInput`
   font-size: 16px;
   color: #fff;
   width: 320px;
+  padding: 10px;
 `;
 
 export const Scroller = styled.ScrollView`
