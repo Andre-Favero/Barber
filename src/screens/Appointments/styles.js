@@ -50,3 +50,11 @@ export const ImagePreloadlarge = styled.Image`
   margin-top: 120px;
   margin-left: 55px;
 `;
+export const TextTittle = styled.Text`
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px;
+  margin-top: 10px;
+`;

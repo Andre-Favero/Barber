@@ -5,6 +5,7 @@ import {
   ListArea,
   ImagePreloadlarge,
   BodyText,
+  TextTittle,
 } from './styles';
 import AppointmentItem from '../../components/AppointmentItem';
 import api from '../../api';
@@ -39,6 +40,7 @@ export default () => {
 
   return (
     <Container>
+      <TextTittle>Seus agendamentos</TextTittle>
       <Scroller
         refreshControl={
           <RefreshControl refreshing={loading} onRefresh={getAppointments} />
