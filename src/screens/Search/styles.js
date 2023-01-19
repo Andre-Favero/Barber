@@ -64,3 +64,11 @@ export const ImagePreloadlarge = styled.Image`
   justify-content: center;
   margin-top: 120px;
 `;
+export const ImageLoading = styled.Image`
+  width: 90%;
+  height: 320px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  margin-left: 30px;
+`;

@@ -11,6 +11,7 @@ import {
   ImagePreload,
   ImagePreloadArea,
   ImagePreloadlarge,
+  ImageLoading,
 } from './styles';
 import BarberItem from '../../components/BarberItem';
 import api from '../../api';
@@ -82,6 +83,7 @@ export default () => {
               <WarningTextEmptyListBold>{searchText}</WarningTextEmptyListBold>
             </WarningTextEmptyList>
             <LoadingIcon size="large" color="#fff" />
+            <ImageLoading source={require('../../assets/loading.png')} />
           </>
         )}
 
