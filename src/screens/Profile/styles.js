@@ -63,3 +63,17 @@ export const TextTittle = styled.Text`
   margin: 5px;
   margin-top: 10px;
 `;
+export const ProfileImageArea = styled.View`
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+  background-color: #1c1c1c;
+  margin-top: 28px;
+  border: 1px solid #999;
+`;
+
+export const ProfileImage = styled.Image`
+  width: 210px;
+  height: 210px;
+`;

@@ -1,13 +1,14 @@
 import React from 'react';
 import {
   Container,
-  ImagePreloadlarge,
   Logout,
   TextButton,
   ButtonArea,
   TextButtonInfo,
   InfoButton,
   TextTittle,
+  ProfileImage,
+  ProfileImageArea,
 } from './styles';
 import api from '../../api';
 import {useNavigation} from '@react-navigation/native';
@@ -26,7 +27,10 @@ export default () => {
   return (
     <Container>
       <TextTittle> Seu perfil</TextTittle>
-      <ImagePreloadlarge source={require('../../assets/profile.png')} />
+      <ProfileImageArea>
+        <ProfileImage source={require('../../assets/profilePic.png')} />
+        {/* <ProfileImage source={uri: user.avatar} /> */}
+      </ProfileImageArea>
       <ButtonArea>
         <InfoButton activeOpacity={0.8}>
           <TextButtonInfo>Alterar credenciais</TextButtonInfo>
