@@ -24,6 +24,11 @@ export default () => {
       routes: [{name: 'SignIn'}],
     });
   };
+
+  const handleUpdateInfo = () => {
+    navigation.navigate('UpdateInfo');
+  };
+
   return (
     <Container>
       <TextTittle> Seu perfil</TextTittle>
@@ -32,7 +37,7 @@ export default () => {
         {/* <ProfileImage source={uri: user.avatar} /> */}
       </ProfileImageArea>
       <ButtonArea>
-        <InfoButton activeOpacity={0.8}>
+        <InfoButton onPress={handleUpdateInfo} activeOpacity={0.8}>
           <TextButtonInfo>Alterar credenciais</TextButtonInfo>
         </InfoButton>
         <Logout onPress={handleLogout} activeOpacity={0.8}>
