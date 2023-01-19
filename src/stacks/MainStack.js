@@ -5,6 +5,7 @@ import SignIn from '../screens/SignIn';
 import SignUp from '../screens/SignUp';
 import MainTab from '../stacks/MainTab';
 import Barber from '../screens/Barber';
+import UpdateInfo from '../screens/UpdateInfo';
 const Stack = createStackNavigator();
 
 export default () => (
@@ -18,5 +19,6 @@ export default () => (
     <Stack.Screen name="SignUp" component={SignUp} />
     <Stack.Screen name="MainTab" component={MainTab} />
     <Stack.Screen name="Barber" component={Barber} />
+    <Stack.Screen name="UpdateInfo" component={UpdateInfo} />
   </Stack.Navigator>
 );
