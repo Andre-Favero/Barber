@@ -29,12 +29,12 @@ export const InfoButton = styled.TouchableOpacity`
 `;
 
 export const ImagePreloadlarge = styled.Image`
-  width: 70%;
+  width: 90%;
   height: 300px;
   align-items: center;
   justify-content: center;
-  margin-top: 120px;
-  margin-left: 55px;
+  margin-top: 60px;
+  margin-left: 20px;
 `;
 
 export const ButtonArea = styled.View`
@@ -48,6 +48,16 @@ export const TextButton = styled.Text`
   color: #ed5757;
   font-size: 18px;
   font-weight: bold;
+`;
+export const TextProfile = styled.Text`
+  color: #999;
+  font-size: 25px;
+  font-weight: bold;
+`;
+export const TextProfileEmail = styled.Text`
+  color: #999;
+  margin-top: 5px;
+  font-size: 15px;
 `;
 
 export const TextButtonInfo = styled.Text`
@@ -64,16 +74,18 @@ export const TextTittle = styled.Text`
   margin-top: 10px;
 `;
 export const ProfileImageArea = styled.View`
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 20px;
-  background-color: #1c1c1c;
-  margin-top: 28px;
-  border: 1px solid #999;
+  margin-top: 20px;
+  margin-left: 20px;
+  flex-direction: row;
 `;
 
 export const ProfileImage = styled.Image`
-  width: 210px;
-  height: 210px;
+  width: 130px;
+  height: 130px;
+  border-radius: 105px;
+`;
+export const TextProfileArea = styled.View`
+  flex: 1;
+  padding: 20px;
+  align-items: flex-start;
 `;
