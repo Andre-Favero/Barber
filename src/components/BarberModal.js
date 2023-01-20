@@ -218,7 +218,6 @@ export default ({show, setShow, user, service}) => {
       if (availability.length > 0) {
         setlistHour(availability[0].hours);
       }
-      console.log(availability);
     }
     setSelectedHour(null);
   }, [selectedDay, selectedMouth, selectedYear, user.available, listHour]);
@@ -243,7 +242,6 @@ export default ({show, setShow, user, service}) => {
       selectedDay > 0 &&
       selectedHour !== null
     ) {
-      console.log(selectedMouth);
       let res = await api.setAppointment(
         user.id,
         user.services[service].id,
