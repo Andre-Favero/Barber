@@ -6,9 +6,8 @@ import {
   CustomButton,
   CustomButtonText,
   ImageLoading,
-  InputPassword,
   EyeButton,
-  InputAreaPassword,
+  TextTitle,
 } from './styles';
 import EmailIcon from '../../assets/email.svg';
 import LockIcon from '../../assets/lock.svg';
@@ -27,17 +26,24 @@ export default () => {
   const navigation = useNavigation();
 
   const UpdateInfo = async () => {
-    if (passwordField === passwordFieldC) {
-      let res = await api.updateUser({
-        name: nameField,
-        email: emailField,
-        password: passwordField,
-        password_confirm: passwordFieldC,
-      });
-      console.log(res.error);
+    let res = await api.updateUser({
+      name: nameField,
+      email: emailField,
+      password: passwordField,
+      password_confirm: passwordFieldC,
+    });
+    if (
+      nameField.length > 2 &&
+      emailField !== '' &&
+      passwordField === passwordFieldC &&
+      res.error === ''
+    ) {
+      Alert.alert('Dados alterados com sucesso');
     } else {
-      Alert.alert('As senhas se diferem');
+      Alert.alert('Campos inválidos ou em branco');
     }
+
+    navigation.navigate('Profile');
   };
 
   const handleShowPassword = () => {
@@ -48,6 +54,7 @@ export default () => {
     <Container>
       <ImageLoading source={require('../../assets/updateInfo.png')} />
       <InputArea>
+        <TextTitle>Preencha todos os campos para fazer as alterações</TextTitle>
         <SignInput
           IconSvg={PersonIcon}
           placeholder="Alterar Nome"

@@ -57,6 +57,19 @@ export const EyeButton = styled.TouchableOpacity`
   width: 30px;
   height: 30px;
   background-color: #1c1c1c;
-  margin-top: 207px;
+  margin-top: 260px;
   margin-left: 320px;
+`;
+export const BackButton = styled.TouchableHighlight`
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+`;
+export const TextTitle = styled.Text`
+  color: #999;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
 `;
