@@ -10,6 +10,7 @@ export const SearchArea = styled.View`
   border-radius: 5px;
   /* padding: 0 20px; */
   margin: 20px;
+  height: 50px;
 `;
 export const SearchInput = styled.TextInput`
   flex: 1;
@@ -56,7 +57,7 @@ export const ImagePreload = styled.Image`
   height: 270px;
   align-items: center;
   justify-content: center;
-  margin-top: 154px;
+  margin-top: 101px;
 `;
 export const ImagePreloadlarge = styled.Image`
   width: 100%;
@@ -72,4 +73,12 @@ export const ImageLoading = styled.Image`
   justify-content: center;
   margin-top: 60px;
   margin-left: 30px;
+`;
+export const TextTittle = styled.Text`
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px;
+  margin-top: 10px;
 `;

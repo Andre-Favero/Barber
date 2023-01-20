@@ -13,6 +13,7 @@ import {
   ImagePreloadArea,
   ImagePreloadlarge,
   ImageLoading,
+  TextTittle,
 } from './styles';
 import BarberItem from '../../components/BarberItem';
 import api from '../../api';
@@ -58,6 +59,8 @@ export default () => {
 
   return (
     <Container>
+      <TextTittle>Procure um barbeiro</TextTittle>
+
       <SearchArea>
         <SearchInput
           placeholder="Digite o nome do barbeiro"
