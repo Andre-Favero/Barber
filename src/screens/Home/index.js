@@ -64,17 +64,6 @@ export default () => {
         <C.Divider />
         <ComodidadesButtons />
         <C.Divider />
-
-        <HeaderArea>
-          <HeaderTitle>BARBEIROS</HeaderTitle>
-        </HeaderArea>
-        {loading && <LoadingIcon size="large" color="#FFFFFF" />}
-
-        <ListArea>
-          {listBarbers.map((item, k) => (
-            <BarberItem key={k} data={item} />
-          ))}
-        </ListArea>
       </C.ContentArea>
     </C.Page>
   );
