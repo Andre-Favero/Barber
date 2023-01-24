@@ -59,7 +59,7 @@ export default ({state, navigation}) => {
           <HomeIcon width="24" height="24" fill="#FFF" />
         )}
 
-        <TextTab>Home</TextTab>
+        <TextTab>Inicio</TextTab>
       </TabItem>
 
       <TabItem onPress={() => goTo('Search')}>
@@ -69,7 +69,7 @@ export default ({state, navigation}) => {
           <SearchIcon width="24" height="24" fill="#FFF" />
         )}
 
-        <TextTab>Search</TextTab>
+        <TextTab>Buscar</TextTab>
       </TabItem>
 
       <TabItemCenter
