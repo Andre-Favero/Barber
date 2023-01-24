@@ -6,7 +6,6 @@ import {
   ButtonArea,
   TextButtonInfo,
   InfoButton,
-  TextTittle,
   ProfileImage,
   ProfileImageArea,
   TextProfile,
@@ -16,8 +15,8 @@ import {
 } from './styles';
 import api from '../../api';
 import {useNavigation, useRoute} from '@react-navigation/native';
-import {UserContext} from '../../contexts/UserContext';
 import {Alert} from 'react-native';
+import {UserContext} from '../../contexts/UserContext';
 import {useIsFocused} from '@react-navigation/native';
 
 export default () => {
@@ -47,7 +46,6 @@ export default () => {
       let json = await api.getUserInfo();
       if (json.error === '') {
         setUserInfo(json.data);
-        console.log(json);
       } else {
         Alert.alert('Erro: ', json.error);
       }
