@@ -9,6 +9,7 @@ import {
   SignMessageButtonText,
   SignMessageButtonTextBold,
   ImageLogin,
+  ContentArea,
 } from './styles';
 
 import EmailIcon from '../../assets/email.svg';
@@ -58,29 +59,33 @@ export default () => {
 
   return (
     <Container>
-      <ImageLogin source={require('../../assets/cadeadoLogin.png')} />
-      <InputArea>
-        <SignInput
-          IconSvg={EmailIcon}
-          placeholder="Digite seu Email"
-          value={emailField}
-          onChangeText={t => setEmailField(t)}
-        />
-        <SignInput
-          IconSvg={LockIcon}
-          placeholder="Digite sua senha"
-          value={passwordField}
-          onChangeText={t => setPasswordField(t)}
-          password={true}
-        />
-        <CustomButton activeOpacity={0.75} onPress={handleSignClick}>
-          <CustomButtonText>Acessar</CustomButtonText>
-        </CustomButton>
-      </InputArea>
-      <SignMessageButton activeOpacity={0.8} onPress={handleMessageButtonClick}>
-        <SignMessageButtonText>Ainda não possui conta?</SignMessageButtonText>
-        <SignMessageButtonTextBold>Cadastre-se</SignMessageButtonTextBold>
-      </SignMessageButton>
+      <ContentArea>
+        <ImageLogin source={require('../../assets/cadeadoLogin.png')} />
+        <InputArea>
+          <SignInput
+            IconSvg={EmailIcon}
+            placeholder="Digite seu Email"
+            value={emailField}
+            onChangeText={t => setEmailField(t)}
+          />
+          <SignInput
+            IconSvg={LockIcon}
+            placeholder="Digite sua senha"
+            value={passwordField}
+            onChangeText={t => setPasswordField(t)}
+            password={true}
+          />
+          <CustomButton activeOpacity={0.75} onPress={handleSignClick}>
+            <CustomButtonText>Acessar</CustomButtonText>
+          </CustomButton>
+        </InputArea>
+        <SignMessageButton
+          activeOpacity={0.8}
+          onPress={handleMessageButtonClick}>
+          <SignMessageButtonText>Ainda não possui conta?</SignMessageButtonText>
+          <SignMessageButtonTextBold>Cadastre-se</SignMessageButtonTextBold>
+        </SignMessageButton>
+      </ContentArea>
     </Container>
   );
 };
