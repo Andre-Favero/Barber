@@ -61,7 +61,7 @@ export const EyeButton = styled.TouchableOpacity`
 export const BackButton = styled.TouchableHighlight`
   position: absolute;
   left: 0;
-  top: 0;
+  top: 30px;
   z-index: 9;
 `;
 export const TextTitle = styled.Text`
