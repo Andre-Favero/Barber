@@ -77,7 +77,10 @@ export default () => {
       <Scroller>
         {imageEmpty && (
           <ImagePreloadArea>
-            <ImagePreload source={require('../../assets/Search.png')} />
+            <ImagePreload
+              resizeMode="contain"
+              source={require('../../assets/Search.png')}
+            />
           </ImagePreloadArea>
         )}
         {loading && (

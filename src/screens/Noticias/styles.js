@@ -1,10 +1,13 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.ScrollView`
   background-color: #111;
   flex: 1;
-  justify-content: center;
+`;
+export const ContentArea = styled.View`
+  background-color: #111;
   align-items: center;
+  justify-content: center;
 `;
 export const TextTittle = styled.Text`
   text-align: center;
@@ -19,7 +22,7 @@ export const ImagePreloadlarge = styled.Image`
   height: 260px;
   align-items: center;
   justify-content: center;
-  margin-top: -170px;
+  margin-top: 60px;
 `;
 export const BackButton = styled.TouchableHighlight`
   position: absolute;

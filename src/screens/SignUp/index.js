@@ -9,6 +9,7 @@ import {
   SignMessageButtonText,
   SignMessageButtonTextBold,
   ImageRegister,
+  ContentArea,
 } from './styles';
 import EmailIcon from '../../assets/email.svg';
 import LockIcon from '../../assets/lock.svg';
@@ -55,35 +56,39 @@ export default () => {
 
   return (
     <Container>
-      <ImageRegister source={require('../../assets/cadastroImage.png')} />
-      <InputArea>
-        <SignInput
-          IconSvg={PersonIcon}
-          placeholder="Digite seu Nome"
-          value={nameField}
-          onChangeText={t => setNameField(t)}
-        />
-        <SignInput
-          IconSvg={EmailIcon}
-          placeholder="Digite seu Email"
-          value={emailField}
-          onChangeText={t => setEmailField(t)}
-        />
-        <SignInput
-          IconSvg={LockIcon}
-          placeholder="Digite sua senha"
-          value={passwordField}
-          onChangeText={t => setPasswordField(t)}
-          password={true}
-        />
-        <CustomButton activeOpacity={0.75} onPress={handleSignClick}>
-          <CustomButtonText>Cadastrar</CustomButtonText>
-        </CustomButton>
-      </InputArea>
-      <SignMessageButton activeOpacity={0.8} onPress={handleMessageButtonClick}>
-        <SignMessageButtonText>Já possui conta?</SignMessageButtonText>
-        <SignMessageButtonTextBold>Acesse</SignMessageButtonTextBold>
-      </SignMessageButton>
+      <ContentArea>
+        <ImageRegister source={require('../../assets/cadastroImage.png')} />
+        <InputArea>
+          <SignInput
+            IconSvg={PersonIcon}
+            placeholder="Digite seu Nome"
+            value={nameField}
+            onChangeText={t => setNameField(t)}
+          />
+          <SignInput
+            IconSvg={EmailIcon}
+            placeholder="Digite seu Email"
+            value={emailField}
+            onChangeText={t => setEmailField(t)}
+          />
+          <SignInput
+            IconSvg={LockIcon}
+            placeholder="Digite sua senha"
+            value={passwordField}
+            onChangeText={t => setPasswordField(t)}
+            password={true}
+          />
+          <CustomButton activeOpacity={0.75} onPress={handleSignClick}>
+            <CustomButtonText>Cadastrar</CustomButtonText>
+          </CustomButton>
+        </InputArea>
+        <SignMessageButton
+          activeOpacity={0.8}
+          onPress={handleMessageButtonClick}>
+          <SignMessageButtonText>Já possui conta?</SignMessageButtonText>
+          <SignMessageButtonTextBold>Acesse</SignMessageButtonTextBold>
+        </SignMessageButton>
+      </ContentArea>
     </Container>
   );
 };

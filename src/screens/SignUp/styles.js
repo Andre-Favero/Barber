@@ -1,10 +1,13 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.ScrollView`
   background-color: #111;
   flex: 1;
-  justify-content: center;
+`;
+export const ContentArea = styled.View`
+  background-color: #111;
   align-items: center;
+  justify-content: center;
 `;
 export const InputArea = styled.View`
   padding: 40px;
@@ -38,7 +41,7 @@ export const SignMessageButtonTextBold = styled.Text`
   font-weight: bold;
 `;
 export const ImageRegister = styled.Image`
-  width: 60%;
-  height: 220px;
-  margin-top: -50px;
+  width: 50%;
+  height: 200px;
+  margin-top: 20px;
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.ScrollView`
   flex: 1;
 `;
 
@@ -14,6 +14,7 @@ export const Logout = styled.TouchableOpacity`
   align-items: center;
   margin-right: 20px;
   margin-left: 20px;
+  margin-bottom: 10px;
 `;
 export const InfoButton = styled.TouchableOpacity`
   width: 80%;
@@ -42,6 +43,7 @@ export const ButtonArea = styled.View`
   justify-content: flex-end;
   align-items: center;
   margin-bottom: 20px;
+  margin-top: 52px;
 `;
 
 export const TextButton = styled.Text`

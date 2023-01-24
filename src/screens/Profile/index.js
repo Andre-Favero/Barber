@@ -62,7 +62,10 @@ export default () => {
           <TextProfileEmail>{userInfo.email}</TextProfileEmail>
         </TextProfileArea>
       </ProfileImageArea>
-      <ImagePreloadlarge source={require('../../assets/profileBody.png')} />
+      <ImagePreloadlarge
+        resizeMode="contain"
+        source={require('../../assets/profileBody.png')}
+      />
       <ButtonArea>
         <InfoButton onPress={handleUpdateInfo} activeOpacity={0.8}>
           <TextButtonInfo>Alterar credenciais</TextButtonInfo>

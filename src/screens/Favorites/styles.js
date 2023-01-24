@@ -46,6 +46,7 @@ export const BodyText = styled.Text`
   font-weight: bold;
   color: #fff;
   text-align: center;
+  margin-top: -65px;
 `;
 
 export const ImagePreloadArea = styled.View`
@@ -58,6 +59,6 @@ export const ImagePreloadlarge = styled.Image`
   height: 300px;
   align-items: center;
   justify-content: center;
-  margin-top: 120px;
+  margin-top: -70px;
   margin-left: 55px;
 `;

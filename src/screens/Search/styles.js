@@ -53,8 +53,8 @@ export const ImagePreloadArea = styled.View`
 `;
 
 export const ImagePreload = styled.Image`
-  width: 130%;
-  height: 270px;
+  width: 400px;
+  height: 300px;
   align-items: center;
   justify-content: center;
   margin-top: 101px;

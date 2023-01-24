@@ -1,10 +1,13 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.ScrollView`
   background-color: #111;
   flex: 1;
-  justify-content: center;
+`;
+export const ContentArea = styled.View`
+  background-color: #111;
   align-items: center;
+  justify-content: center;
 `;
 export const InputArea = styled.View`
   padding: 40px;
@@ -42,5 +45,5 @@ export const ImageLogin = styled.Image`
   width: 90%;
   height: 180px;
   margin-right: 74px;
-  margin-top: -150px;
+  margin-top: 20px;
 `;
