@@ -6,6 +6,7 @@ import {
   ImagePreloadlarge,
   BodyText,
   TextTittle,
+  LoadingIcon,
 } from './styles';
 import AppointmentItem from '../../components/AppointmentItem';
 import api from '../../api';
@@ -53,6 +54,7 @@ export default () => {
             <BodyText>Sem agendamentos</BodyText>
           </>
         )}
+        {loading && <LoadingIcon />}
         <ListArea>
           {list.reverse().map((item, k) => (
             <AppointmentItem key={k} data={item} />
