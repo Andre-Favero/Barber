@@ -1,5 +1,5 @@
 /* eslint-disable no-alert */
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {useIsFocused, useNavigation, useRoute} from '@react-navigation/native';
 import {
   Container,
@@ -20,6 +20,10 @@ import {Alert} from 'react-native';
 import BackIcon from '../../assets/back.svg';
 
 export default () => {
+  const inputRef = useRef(null);
+  const ChangePasswordRef = useRef(null);
+  const ChangePasswordCRef = useRef(null);
+
   const route = useRoute();
   const isFocused = useIsFocused();
   const [userInfo, setUserInfo] = useState({
@@ -32,14 +36,18 @@ export default () => {
   const [passwordField, setPasswordField] = useState('');
   const [passwordFieldC, setPasswordFieldC] = useState('');
   const [showPassword, setShowPassword] = useState(true);
+  const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
-  console.log(userInfo.name);
-  console.log(userInfo.email);
+
+  useEffect(() => {
+    setNameField(userInfo.name);
+    setEmailField(userInfo.email);
+  }, [userInfo.name, userInfo.email]);
 
   const UpdateInfo = async () => {
     let res = await api.updateUser({
-      name: nameField,
-      email: emailField,
+      name: nameField ?? userInfo.name,
+      email: emailField ?? userInfo.email,
       password: passwordField,
       password_confirm: passwordFieldC,
     });
@@ -50,11 +58,10 @@ export default () => {
       res.error === ''
     ) {
       alert('Dados alterados com sucesso', res.error);
+      navigation.navigate('profile');
     } else {
       alert('Campos inválidos ou em branco', res.error);
     }
-    console.log(res.error);
-    navigation.navigate('Profile');
   };
 
   const handleShowPassword = () => {
@@ -66,6 +73,7 @@ export default () => {
   };
 
   useEffect(() => {
+    setLoading(true);
     const getUser = async () => {
       let json = await api.getUserInfo();
       if (json.error === '') {
@@ -75,54 +83,68 @@ export default () => {
       }
     };
     getUser();
+    setLoading(false);
   }, [isFocused]);
 
   return (
     <Container>
-      <InputArea>
-        <TextTitle>Preencha todos os campos para fazer as alterações</TextTitle>
-        <SignInput
-          IconSvg={PersonIcon}
-          placeholder="Alterar Nome"
-          value={nameField}
-          onChangeText={t => setNameField(t)}
-        />
-        <SignInput
-          IconSvg={EmailIcon}
-          placeholder="Alterar Email"
-          value={emailField}
-          onChangeText={t => setEmailField(t)}
-        />
+      {!loading && (
+        <>
+          <InputArea>
+            <TextTitle>
+              Preencha todos os campos para fazer as alterações
+            </TextTitle>
+            <SignInput
+              IconSvg={PersonIcon}
+              placeholder="Alterar Nome"
+              value={nameField}
+              onChangeText={t => setNameField(t)}
+              onSubmitEditing={() => inputRef.current.focus()}
+            />
+            <SignInput
+              referencia={inputRef}
+              IconSvg={EmailIcon}
+              placeholder="Alterar Email"
+              value={emailField}
+              onChangeText={t => setEmailField(t)}
+              onSubmitEditing={() => ChangePasswordRef.current.focus()}
+            />
 
-        <SignInput
-          IconSvg={LockIcon}
-          placeholder="Alterar senha"
-          value={passwordField}
-          onChangeText={t => setPasswordField(t)}
-          password={showPassword}
-        />
-        <EyeButton onPress={handleShowPassword}>
-          {showPassword ? (
-            <Ionic name="eye-outline" size={25} color="#ddd" />
-          ) : (
-            <Ionic name="eye-off-outline" size={25} color="#ddd" />
-          )}
-        </EyeButton>
+            <SignInput
+              referencia={ChangePasswordRef}
+              IconSvg={LockIcon}
+              placeholder="Alterar senha"
+              value={passwordField}
+              onChangeText={t => setPasswordField(t)}
+              password={showPassword}
+              onSubmitEditing={() => ChangePasswordCRef.current.focus()}
+            />
+            <EyeButton onPress={handleShowPassword}>
+              {showPassword ? (
+                <Ionic name="eye-outline" size={25} color="#ddd" />
+              ) : (
+                <Ionic name="eye-off-outline" size={25} color="#ddd" />
+              )}
+            </EyeButton>
 
-        <SignInput
-          IconSvg={LockIcon}
-          placeholder="Confirmar senha"
-          value={passwordFieldC}
-          onChangeText={t => setPasswordFieldC(t)}
-          password={showPassword}
-        />
-        <CustomButton activeOpacity={0.75} onPress={UpdateInfo}>
-          <CustomButtonText>Alterar informações</CustomButtonText>
-        </CustomButton>
-      </InputArea>
-      <BackButton underlayColor="transparent" onPress={handleBackButton}>
-        <BackIcon width="44" height="44" fill="#fff" />
-      </BackButton>
+            <SignInput
+              referencia={ChangePasswordCRef}
+              IconSvg={LockIcon}
+              placeholder="Confirmar senha"
+              value={passwordFieldC}
+              onChangeText={t => setPasswordFieldC(t)}
+              password={showPassword}
+              onSubmitEditing={UpdateInfo}
+            />
+            <CustomButton activeOpacity={0.75} onPress={UpdateInfo}>
+              <CustomButtonText>Alterar informações</CustomButtonText>
+            </CustomButton>
+          </InputArea>
+          <BackButton underlayColor="transparent" onPress={handleBackButton}>
+            <BackIcon width="44" height="44" fill="#fff" />
+          </BackButton>
+        </>
+      )}
     </Container>
   );
 };
