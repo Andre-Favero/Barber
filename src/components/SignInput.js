@@ -23,16 +23,26 @@ const Input = styled.TextInput`
   flex-direction: row;
 `;
 
-export default ({IconSvg, placeholder, value, onChangeText, password}) => {
+export default ({
+  IconSvg,
+  placeholder,
+  value,
+  onChangeText,
+  password,
+  referencia,
+  ...props
+}) => {
   return (
     <InputArea>
       <IconSvg width="24" height="24" fill="#999" />
       <Input
+        {...props}
         placeholder={placeholder}
         placeholderTextColor="#999"
         value={value}
         onChangeText={onChangeText}
         secureTextEntry={password}
+        ref={referencia}
       />
     </InputArea>
   );
