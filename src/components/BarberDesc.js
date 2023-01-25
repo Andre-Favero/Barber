@@ -82,20 +82,22 @@ export default ({data}) => {
   }, [data.id, isFocused]);
 
   return (
-    <Area activeOpacity={0.7} onPress={handleClick}>
-      <Avatar source={{uri: data.avatar}} />
-      <InfoArea>
-        <UserName>{data.name}</UserName>
-      </InfoArea>
-      <InfoAreaFav>
-        <UserFavButton onPress={handleFavorited}>
-          {favorite ? (
-            <FavoriteFullIcon width="24" height="24" fill="#ff0000" />
-          ) : (
-            <FavoriteIcon width="24" height="24" fill="#ff0000" />
-          )}
-        </UserFavButton>
-      </InfoAreaFav>
-    </Area>
+    !loading && (
+      <Area activeOpacity={0.7} onPress={handleClick}>
+        <Avatar source={{uri: data.avatar}} />
+        <InfoArea>
+          <UserName>{data.name}</UserName>
+        </InfoArea>
+        <InfoAreaFav>
+          <UserFavButton onPress={handleFavorited}>
+            {favorite ? (
+              <FavoriteFullIcon width="24" height="24" fill="#ff0000" />
+            ) : (
+              <FavoriteIcon width="24" height="24" fill="#ff0000" />
+            )}
+          </UserFavButton>
+        </InfoAreaFav>
+      </Area>
+    )
   );
 };
