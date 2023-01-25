@@ -17,7 +17,6 @@ import {Alert} from 'react-native';
 
 export default () => {
   const isFocused = useIsFocused();
-  const [locationText, setLocationText] = useState('');
   const [listBarbers, setListaBarbers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -33,14 +32,9 @@ export default () => {
 
   const getBarbers = async () => {
     setListaBarbers([]);
-    let lat = null;
-    let lng = null;
 
-    let res = await api.getBarbers(lat, lng, locationText);
+    let res = await api.getBarbers();
     if (res.error === '') {
-      if (res.loc) {
-        setLocationText('');
-      }
       setListaBarbers(res.data);
       setLoading(false);
     } else {
