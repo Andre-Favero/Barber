@@ -16,7 +16,7 @@ export default () => {
           <C.ComodidadeImg source={require('../assets/wifi.png')} />
         </C.Comodidades>
         <C.Comodidades activeOpacity={1}>
-          <C.ComodidadeImg source={require('../assets/kids.png')} />
+          <C.ComodidadeImg source={require('../assets/bear-toy.png')} />
         </C.Comodidades>
       </C.ButtonArea>
     </>
