@@ -49,8 +49,9 @@ export const ButtonAreaInside = styled.View`
 export const ButtonOpc = styled.TouchableOpacity`
   width: 65px;
   height: 65px;
-  border-radius: 50px;
-  background-color: #f05f0f;
+  border-radius: 20px;
+  border: 1px solid #fc5f0f;
+  background-color: 000;
   justify-content: center;
   align-items: center;
 `;
