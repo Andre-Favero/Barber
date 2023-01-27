@@ -27,9 +27,6 @@ export default () => {
     name: route.params,
     email: route.params,
   });
-  useEffect(() => {
-    console.log(loading);
-  }, [loading]);
 
   const {state: user} = useContext(UserContext);
   const [loading, setLoading] = useState(true);
