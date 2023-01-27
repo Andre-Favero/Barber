@@ -12,7 +12,6 @@ const UserArea = styled.View`
   flex: 1;
   flex-direction: row;
   align-items: center;
-  background-color: green;
 `;
 const Avatar = styled.Image`
   width: 56px;
@@ -61,7 +60,7 @@ export default ({data}) => {
   let dateString = `${day}/${month}/${year}`;
 
   return (
-    <Area activeOpacity={0.8} onPress={alert('Clicou', data.barber.name)}>
+    <Area activeOpacity={0.8}>
       <UserArea>
         <Avatar source={{uri: data.barber.avatar}} />
         <UserName>{data.barber.name}</UserName>
