@@ -20,14 +20,14 @@ const TabItem = styled.TouchableOpacity`
 `;
 
 const TabItemCenter = styled.TouchableOpacity`
-  width: 70px;
-  height: 70px;
+  width: 24px;
+  height: 24px;
   justify-content: center;
   align-items: center;
-  background-color: #222;
-  border-radius: 35px;
-  border: 1px solid ${props => (props.state === 2 ? '#fc5F0F' : '#000')};
-  margin-top: -20px;
+  /* background-color: #2f2f2f;
+  border-radius: 35px; */
+  /* border: 6px solid ${props => (props.state === 2 ? '#333' : '#333')};
+  margin-top: -30px; */
 `;
 
 const TextTab = styled.Text`
@@ -72,7 +72,7 @@ export default ({state, navigation}) => {
         <TextTab>Buscar</TextTab>
       </TabItem>
 
-      <TabItemCenter
+      <TabItem
         activeOpacity={0.9}
         onPress={() => goTo('Appointments')}
         state={state.index}>
@@ -81,7 +81,8 @@ export default ({state, navigation}) => {
         ) : (
           <TodayIcon width="24" height="24" fill="#FFF" />
         )}
-      </TabItemCenter>
+        <TextTab>Agenda</TextTab>
+      </TabItem>
 
       <TabItem onPress={() => goTo('Favorites')}>
         {state.index === 3 ? (
