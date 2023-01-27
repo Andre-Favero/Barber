@@ -1,5 +1,7 @@
 package com.barberdev;
 
+import com.zoontek.rnbootsplash.RNBootSplashPackage;
+
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
