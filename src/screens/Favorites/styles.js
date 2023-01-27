@@ -56,10 +56,10 @@ export const ImagePreloadArea = styled.View`
   flex: 1;
 `;
 export const ImagePreloadlarge = styled.Image`
-  width: 70%;
-  height: 300px;
+  width: 100%;
+  height: 350px;
   align-items: center;
   justify-content: center;
-  margin-top: -70px;
-  margin-left: 55px;
+  margin-top: 30px;
+  margin-bottom: 15px;
 `;

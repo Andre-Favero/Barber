@@ -24,18 +24,24 @@ export const InfoButton = styled.TouchableOpacity`
   border-radius: 5px;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
   margin-right: 20px;
   margin-left: 20px;
   margin-bottom: 15px;
 `;
 
+export const ImagePreloadArea = styled.View`
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+`;
+
 export const ImagePreloadlarge = styled.Image`
-  width: 90%;
-  height: 300px;
+  width: 60%;
+  height: 200px;
   align-items: center;
   justify-content: center;
-  margin-top: 60px;
-  margin-left: 20px;
+  margin-top: 70px;
 `;
 
 export const ButtonArea = styled.View`

@@ -13,6 +13,7 @@ import {
   TextProfileArea,
   ImagePreloadlarge,
   LoadingIcon,
+  ImagePreloadArea,
 } from './styles';
 import api from '../../api';
 import {useNavigation, useRoute} from '@react-navigation/native';
@@ -67,10 +68,10 @@ export default () => {
           <TextProfileEmail>{userInfo.email}</TextProfileEmail>
         </TextProfileArea>
       </ProfileImageArea>
-      <ImagePreloadlarge
-        resizeMode="contain"
-        source={require('../../assets/profileBody.png')}
-      />
+      <ImagePreloadArea>
+        <ImagePreloadlarge source={require('../../assets/profileBody.png')} />
+      </ImagePreloadArea>
+
       <ButtonArea>
         <InfoButton onPress={handleUpdateInfo} activeOpacity={0.8}>
           <TextButtonInfo>Alterar credenciais</TextButtonInfo>

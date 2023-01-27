@@ -43,12 +43,12 @@ export const ImagePreloadArea = styled.View`
   flex: 1;
 `;
 export const ImagePreloadlarge = styled.Image`
-  width: 70%;
+  width: 100%;
   height: 300px;
   align-items: center;
   justify-content: center;
-  margin-top: 120px;
-  margin-left: 55px;
+  margin-top: 100px;
+  margin-bottom: -35px;
 `;
 export const TextTittle = styled.Text`
   text-align: center;
