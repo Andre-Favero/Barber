@@ -21,19 +21,19 @@ export default () => {
     <C.ButtonArea>
       <C.ButtonAreaInside>
         <C.ButtonOpc activeOpacity={0.6} onPress={handleClickNoticias}>
-          <IconFeather name="bell" size={30} color="#000" />
+          <IconFeather name="bell" size={30} color="#fc5f0f" />
         </C.ButtonOpc>
         <C.TextButtonOpc>Noticias</C.TextButtonOpc>
       </C.ButtonAreaInside>
       <C.ButtonAreaInside>
         <C.ButtonOpc activeOpacity={0.6} onPress={handleClickAgenda}>
-          <IconFeather name="scissors" size={30} color="#000" />
+          <IconFeather name="scissors" size={30} color="#fc5f0f" />
         </C.ButtonOpc>
         <C.TextButtonOpc>Agendar</C.TextButtonOpc>
       </C.ButtonAreaInside>
       <C.ButtonAreaInside>
         <C.ButtonOpc activeOpacity={0.6} onPress={handleClickEquipe}>
-          <IconFeather name="users" size={30} color="#000" />
+          <IconFeather name="users" size={30} color="#fc5f0f" />
         </C.ButtonOpc>
         <C.TextButtonOpc>Equipe</C.TextButtonOpc>
       </C.ButtonAreaInside>
@@ -41,7 +41,7 @@ export default () => {
         <C.ButtonOpc
           activeOpacity={0.6}
           onPress={() => Alert.alert('Ver mapa')}>
-          <IconFeather name="map" size={30} color="#000" />
+          <IconFeather name="map" size={30} color="#fc5f0f" />
         </C.ButtonOpc>
         <C.TextButtonOpc>Ver Mapa</C.TextButtonOpc>
       </C.ButtonAreaInside>
