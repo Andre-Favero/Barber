@@ -26,8 +26,9 @@ export const LoadingIcon = styled.ActivityIndicator`
 `;
 
 export const ListArea = styled.View`
+  flex: 1;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 `;
 
 export const WarningTextEmptyList = styled.Text`

@@ -91,3 +91,4 @@ export const TextProfileArea = styled.View`
   padding: 20px;
   align-items: flex-start;
 `;
+export const LoadingIcon = styled.ActivityIndicator``;

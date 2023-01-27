@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-const Area = styled.View`
+const Area = styled.TouchableOpacity`
   flex: 1;
   background-color: #1c1c1c;
   padding: 15px;
@@ -12,6 +12,7 @@ const UserArea = styled.View`
   flex: 1;
   flex-direction: row;
   align-items: center;
+  background-color: green;
 `;
 const Avatar = styled.Image`
   width: 56px;
@@ -50,8 +51,9 @@ export default ({data}) => {
   let time = d[1].substring(0, 5);
 
   let date = new Date(d[0]);
+  console.log(Date(d[0]));
   let year = date.getFullYear();
-  let month = date.getMonth() + 1;
+  let month = date.getMonth() + 2;
   let day = date.getDate();
 
   month = month < 10 ? '0' + month : month;
@@ -59,7 +61,7 @@ export default ({data}) => {
   let dateString = `${day}/${month}/${year}`;
 
   return (
-    <Area>
+    <Area activeOpacity={0.8} onPress={alert('Clicou', data.barber.name)}>
       <UserArea>
         <Avatar source={{uri: data.barber.avatar}} />
         <UserName>{data.barber.name}</UserName>

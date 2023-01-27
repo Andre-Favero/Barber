@@ -12,6 +12,7 @@ import {
   TextProfileEmail,
   TextProfileArea,
   ImagePreloadlarge,
+  LoadingIcon,
 } from './styles';
 import api from '../../api';
 import {useNavigation, useRoute} from '@react-navigation/native';
@@ -26,8 +27,12 @@ export default () => {
     name: route.params,
     email: route.params,
   });
+  useEffect(() => {
+    console.log(loading);
+  }, [loading]);
 
   const {state: user} = useContext(UserContext);
+  const [loading, setLoading] = useState(true);
 
   const navigation = useNavigation();
   const handleLogout = async () => {
@@ -51,10 +56,13 @@ export default () => {
       }
     };
     getUser();
+    setLoading(false);
   }, [isFocused]);
 
   return (
     <Container>
+      {loading && <LoadingIcon />}
+
       <ProfileImageArea>
         <ProfileImage source={{uri: user.avatar}} />
         <TextProfileArea>
