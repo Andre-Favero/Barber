@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useContext, useRef, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {
@@ -71,7 +72,7 @@ export default () => {
             value={nameField}
             onChangeText={t => setNameField(t)}
             onSubmitEditing={() => refEmail.current.focus()}
-            style={{backgroundColor: '#1c1c1c', color: '#fff'}}
+            style={{backgroundColor: '#1c1c1c'}}
             left={<TextInput.Icon icon={'account-outline'} iconColor="#ddd" />}
           />
           <FormInput
@@ -82,7 +83,7 @@ export default () => {
             value={emailField}
             onChangeText={t => setEmailField(t)}
             onSubmitEditing={() => refSenha.current.focus()}
-            style={{backgroundColor: '#1c1c1c', color: '#fff'}}
+            style={{backgroundColor: '#1c1c1c'}}
             left={<TextInput.Icon icon={'email-outline'} iconColor="#ddd" />}
           />
           <FormInput
@@ -94,7 +95,7 @@ export default () => {
             onChangeText={t => setPasswordField(t)}
             password={true}
             onSubmitEditing={handleSignClick}
-            style={{backgroundColor: '#1c1c1c', color: '#fff'}}
+            style={{backgroundColor: '#1c1c1c'}}
             left={<TextInput.Icon icon={'lock-outline'} iconColor="#ddd" />}
           />
           <CustomButton activeOpacity={0.75} onPress={handleSignClick}>

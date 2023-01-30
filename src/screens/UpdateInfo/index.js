@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-alert */
 import React, {useEffect, useRef, useState} from 'react';
 import {useIsFocused, useNavigation, useRoute} from '@react-navigation/native';
@@ -7,7 +8,6 @@ import {
   CustomButton,
   CustomButtonText,
   BackButton,
-  EyeButton,
   TextTitle,
 } from './styles';
 import EmailIcon from '../../assets/email.svg';
@@ -15,8 +15,6 @@ import LockIcon from '../../assets/lock.svg';
 import PersonIcon from '../../assets/person.svg';
 import {FormInput} from '../../components/SignInput';
 import api from '../../api';
-import Ionic from 'react-native-vector-icons/Ionicons';
-import {Alert} from 'react-native';
 import BackIcon from '../../assets/back.svg';
 import {TextInput} from 'react-native-paper';
 
@@ -63,10 +61,6 @@ export default () => {
     } else {
       alert('Campos inválidos ou em branco', res.error);
     }
-  };
-
-  const handleShowPassword = () => {
-    setShowPassword(!showPassword);
   };
 
   const handleBackButton = () => {

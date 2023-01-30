@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useState, useContext, useRef} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {
@@ -11,9 +12,6 @@ import {
   ImageLogin,
   ContentArea,
 } from './styles';
-
-import EmailIcon from '../../assets/email.svg';
-import LockIcon from '../../assets/lock.svg';
 import Api from '../../api';
 import {Alert} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -72,7 +70,7 @@ export default () => {
             value={emailField}
             onChangeText={t => setEmailField(t)}
             onSubmitEditing={() => inputRef.current.focus()}
-            style={{backgroundColor: '#1c1c1c', color: '#fff'}}
+            style={{backgroundColor: '#1c1c1c'}}
             left={<TextInput.Icon icon={'email-outline'} iconColor="#ddd" />}
           />
           <FormInput
@@ -82,7 +80,7 @@ export default () => {
             onChangeText={t => setPasswordField(t)}
             secureTextEntry={passwordShow}
             ref={inputRef}
-            style={{backgroundColor: '#1c1c1c', color: '#fff'}}
+            style={{backgroundColor: '#1c1c1c'}}
             onSubmitEditing={handleSignClick}
             left={<TextInput.Icon icon={'lock-outline'} iconColor="#ddd" />}
             right={

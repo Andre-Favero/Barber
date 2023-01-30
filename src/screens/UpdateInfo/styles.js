@@ -9,7 +9,7 @@ export const InputArea = styled.View`
   width: 100%;
 `;
 export const CustomButton = styled.TouchableOpacity`
-  height: 60px;
+  height: 50px;
   background-color: #fc5f0f;
   justify-content: center;
   align-items: center;
