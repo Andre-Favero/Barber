@@ -85,7 +85,7 @@ export default () => {
             left={<TextInput.Icon icon={'lock-outline'} iconColor="#ddd" />}
             right={
               <TextInput.Icon
-                icon={passwordShow ? 'eye' : 'eye-off'}
+                icon={passwordShow ? 'eye-outline' : 'eye-off-outline'}
                 iconColor="#ddd"
                 onPress={() => {
                   setPasswordShow(!passwordShow);

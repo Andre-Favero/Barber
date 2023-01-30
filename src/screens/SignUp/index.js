@@ -31,6 +31,7 @@ export default () => {
   const [nameField, setNameField] = useState('');
   const [emailField, setEmailField] = useState('');
   const [passwordField, setPasswordField] = useState('');
+  const [showPassword, setShowPassword] = useState(true);
   const navigation = useNavigation();
 
   const handleSignClick = async () => {
@@ -77,7 +78,7 @@ export default () => {
           />
           <FormInput
             label="Email"
-            referencia={refEmail}
+            ref={refEmail}
             IconSvg={EmailIcon}
             placeholder="Digite seu Email"
             value={emailField}
@@ -88,15 +89,24 @@ export default () => {
           />
           <FormInput
             label="Senha"
-            referencia={refSenha}
+            ref={refSenha}
             IconSvg={LockIcon}
             placeholder="Digite sua senha"
             value={passwordField}
+            secureTextEntry={showPassword}
             onChangeText={t => setPasswordField(t)}
-            password={true}
             onSubmitEditing={handleSignClick}
             style={{backgroundColor: '#1c1c1c'}}
             left={<TextInput.Icon icon={'lock-outline'} iconColor="#ddd" />}
+            right={
+              <TextInput.Icon
+                icon={showPassword ? 'eye-outline' : 'eye-off-outline'}
+                iconColor="#ddd"
+                onPress={() => {
+                  setShowPassword(!showPassword);
+                }}
+              />
+            }
           />
           <CustomButton activeOpacity={0.75} onPress={handleSignClick}>
             <CustomButtonText>Cadastrar</CustomButtonText>
