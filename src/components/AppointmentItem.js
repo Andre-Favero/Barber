@@ -50,7 +50,6 @@ export default ({data}) => {
   let time = d[1].substring(0, 5);
 
   let date = new Date(d[0]);
-  console.log(Date(d[0]));
   let year = date.getFullYear();
   let month = date.getMonth() + 2;
   let day = date.getDate();
