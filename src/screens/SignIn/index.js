@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useRef} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {
   Container,
@@ -21,6 +21,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {UserContext} from '../../contexts/UserContext';
 
 export default () => {
+  const inputRef = useRef(null);
+
   const {dispatch: userDispatch} = useContext(UserContext);
   const navigation = useNavigation();
   const [emailField, setEmailField] = useState('');
@@ -67,6 +69,7 @@ export default () => {
             placeholder="Digite seu Email"
             value={emailField}
             onChangeText={t => setEmailField(t)}
+            onSubmitEditing={() => inputRef.current.focus()}
           />
           <SignInput
             IconSvg={LockIcon}
@@ -74,6 +77,8 @@ export default () => {
             value={passwordField}
             onChangeText={t => setPasswordField(t)}
             password={true}
+            referencia={inputRef}
+            onSubmitEditing={handleSignClick}
           />
           <CustomButton activeOpacity={0.75} onPress={handleSignClick}>
             <CustomButtonText>Acessar</CustomButtonText>

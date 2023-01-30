@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {
   Container,
@@ -21,6 +21,9 @@ import api from '../../api';
 import {Alert} from 'react-native';
 
 export default () => {
+  const refEmail = useRef(null);
+  const refSenha = useRef(null);
+
   const {dispatch: userDispatch} = useContext(UserContext);
   const [nameField, setNameField] = useState('');
   const [emailField, setEmailField] = useState('');
@@ -64,19 +67,24 @@ export default () => {
             placeholder="Digite seu Nome"
             value={nameField}
             onChangeText={t => setNameField(t)}
+            onSubmitEditing={() => refEmail.current.focus()}
           />
           <SignInput
+            referencia={refEmail}
             IconSvg={EmailIcon}
             placeholder="Digite seu Email"
             value={emailField}
             onChangeText={t => setEmailField(t)}
+            onSubmitEditing={() => refSenha.current.focus()}
           />
           <SignInput
+            referencia={refSenha}
             IconSvg={LockIcon}
             placeholder="Digite sua senha"
             value={passwordField}
             onChangeText={t => setPasswordField(t)}
             password={true}
+            onSubmitEditing={handleSignClick}
           />
           <CustomButton activeOpacity={0.75} onPress={handleSignClick}>
             <CustomButtonText>Cadastrar</CustomButtonText>
