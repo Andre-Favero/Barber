@@ -1,5 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components/native';
+import CloseModal from '../assets/closeModal.svg';
+
+const Modal = styled.Modal``;
+
+const ModalArea = styled.View`
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+`;
+const ModalBody = styled.View`
+  background-color: #1c1c1c;
+  border-radius: 20px;
+  padding: 10px 20px 40px 20px;
+  min-height: 250px;
+`;
 
 const Area = styled.TouchableOpacity`
   flex: 1;
@@ -44,8 +59,21 @@ const DataText = styled.Text`
   border-radius: 10px;
   background-color: #1c1c1c;
 `;
+const CloseButton = styled.TouchableOpacity`
+  width: 40px;
+  height: 40px;
+`;
 
 export default ({data}) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
   let d = data.datetime.split(' ');
   let time = d[1].substring(0, 5);
 
@@ -59,12 +87,11 @@ export default ({data}) => {
   let dateString = `${day}/${month}/${year}`;
 
   return (
-    <Area activeOpacity={0.8}>
+    <Area activeOpacity={0.8} onPress={handleOpenModal}>
       <UserArea>
         <Avatar source={{uri: data.barber.avatar}} />
         <UserName>{data.barber.name}</UserName>
       </UserArea>
-
       <SplitArea>
         <ServiceText> {data.service.name} </ServiceText>
         <ServiceText>R$ {data.service.price.toFixed(2)} </ServiceText>
@@ -73,6 +100,29 @@ export default ({data}) => {
         <DataText>{dateString}</DataText>
         <DataText>{time}</DataText>
       </SplitArea>
+
+      <Modal transparent={true} visible={showModal} animationType="fade">
+        <ModalArea>
+          <ModalBody>
+            <CloseButton onPress={handleCloseModal}>
+              <CloseModal width="40" height="40" stroke="#fff" />
+            </CloseButton>
+
+            <UserArea>
+              <Avatar source={{uri: data.barber.avatar}} />
+              <UserName>{data.barber.name}</UserName>
+            </UserArea>
+            <SplitArea>
+              <ServiceText> {data.service.name} </ServiceText>
+              <ServiceText>R$ {data.service.price.toFixed(2)} </ServiceText>
+            </SplitArea>
+            <SplitArea>
+              <DataText>{dateString}</DataText>
+              <DataText>{time}</DataText>
+            </SplitArea>
+          </ModalBody>
+        </ModalArea>
+      </Modal>
     </Area>
   );
 };
