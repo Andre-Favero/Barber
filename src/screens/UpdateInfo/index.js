@@ -103,7 +103,7 @@ export default () => {
             />
             <FormInput
               label="Email"
-              referencia={inputRef}
+              ref={inputRef}
               IconSvg={EmailIcon}
               placeholder="Alterar Email"
               value={emailField}
@@ -115,7 +115,7 @@ export default () => {
 
             <FormInput
               label="Senha"
-              referencia={ChangePasswordRef}
+              ref={ChangePasswordRef}
               IconSvg={LockIcon}
               placeholder="Alterar senha"
               value={passwordField}
@@ -137,7 +137,7 @@ export default () => {
 
             <FormInput
               label="Confirmar senha"
-              referencia={ChangePasswordCRef}
+              ref={ChangePasswordCRef}
               IconSvg={LockIcon}
               placeholder="Confirmar senha"
               value={passwordFieldC}
