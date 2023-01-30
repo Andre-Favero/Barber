@@ -14,11 +14,12 @@ import {
 
 import EmailIcon from '../../assets/email.svg';
 import LockIcon from '../../assets/lock.svg';
-import SignInput from '../../components/SignInput';
 import Api from '../../api';
 import {Alert} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import {UserContext} from '../../contexts/UserContext';
+import {TextInput} from 'react-native-paper';
+import {FormInput} from '../../components/SignInput';
 
 export default () => {
   const inputRef = useRef(null);
@@ -27,6 +28,7 @@ export default () => {
   const navigation = useNavigation();
   const [emailField, setEmailField] = useState('');
   const [passwordField, setPasswordField] = useState('');
+  const [passwordShow, setPasswordShow] = useState(true);
 
   const handleSignClick = async () => {
     if (emailField !== '' && passwordField !== '') {
@@ -64,21 +66,34 @@ export default () => {
       <ContentArea>
         <ImageLogin source={require('../../assets/cadeadoLogin.png')} />
         <InputArea>
-          <SignInput
-            IconSvg={EmailIcon}
+          <FormInput
+            label="Email"
             placeholder="Digite seu Email"
             value={emailField}
             onChangeText={t => setEmailField(t)}
             onSubmitEditing={() => inputRef.current.focus()}
+            style={{backgroundColor: '#1c1c1c', color: '#fff'}}
+            left={<TextInput.Icon icon={'email-outline'} iconColor="#ddd" />}
           />
-          <SignInput
-            IconSvg={LockIcon}
+          <FormInput
+            label="Senha"
             placeholder="Digite sua senha"
             value={passwordField}
             onChangeText={t => setPasswordField(t)}
-            password={true}
-            referencia={inputRef}
+            secureTextEntry={passwordShow}
+            ref={inputRef}
+            style={{backgroundColor: '#1c1c1c', color: '#fff'}}
             onSubmitEditing={handleSignClick}
+            left={<TextInput.Icon icon={'lock-outline'} iconColor="#ddd" />}
+            right={
+              <TextInput.Icon
+                icon={passwordShow ? 'eye' : 'eye-off'}
+                iconColor="#ddd"
+                onPress={() => {
+                  setPasswordShow(!passwordShow);
+                }}
+              />
+            }
           />
           <CustomButton activeOpacity={0.75} onPress={handleSignClick}>
             <CustomButtonText>Acessar</CustomButtonText>

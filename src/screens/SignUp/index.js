@@ -14,11 +14,13 @@ import {
 import EmailIcon from '../../assets/email.svg';
 import LockIcon from '../../assets/lock.svg';
 import PersonIcon from '../../assets/person.svg';
-import SignInput from '../../components/SignInput';
+import {FormInput} from '../../components/SignInput';
+
 import AsyncStorage from '@react-native-community/async-storage';
 import {UserContext} from '../../contexts/UserContext';
 import api from '../../api';
 import {Alert} from 'react-native';
+import {TextInput} from 'react-native-paper';
 
 export default () => {
   const refEmail = useRef(null);
@@ -62,22 +64,29 @@ export default () => {
       <ContentArea>
         <ImageRegister source={require('../../assets/cadastroImage.png')} />
         <InputArea>
-          <SignInput
+          <FormInput
+            label="Nome"
             IconSvg={PersonIcon}
             placeholder="Digite seu Nome"
             value={nameField}
             onChangeText={t => setNameField(t)}
             onSubmitEditing={() => refEmail.current.focus()}
+            style={{backgroundColor: '#1c1c1c', color: '#fff'}}
+            left={<TextInput.Icon icon={'account-outline'} iconColor="#ddd" />}
           />
-          <SignInput
+          <FormInput
+            label="Email"
             referencia={refEmail}
             IconSvg={EmailIcon}
             placeholder="Digite seu Email"
             value={emailField}
             onChangeText={t => setEmailField(t)}
             onSubmitEditing={() => refSenha.current.focus()}
+            style={{backgroundColor: '#1c1c1c', color: '#fff'}}
+            left={<TextInput.Icon icon={'email-outline'} iconColor="#ddd" />}
           />
-          <SignInput
+          <FormInput
+            label="Senha"
             referencia={refSenha}
             IconSvg={LockIcon}
             placeholder="Digite sua senha"
@@ -85,6 +94,8 @@ export default () => {
             onChangeText={t => setPasswordField(t)}
             password={true}
             onSubmitEditing={handleSignClick}
+            style={{backgroundColor: '#1c1c1c', color: '#fff'}}
+            left={<TextInput.Icon icon={'lock-outline'} iconColor="#ddd" />}
           />
           <CustomButton activeOpacity={0.75} onPress={handleSignClick}>
             <CustomButtonText>Cadastrar</CustomButtonText>

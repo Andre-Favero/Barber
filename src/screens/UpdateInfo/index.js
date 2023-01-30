@@ -13,11 +13,12 @@ import {
 import EmailIcon from '../../assets/email.svg';
 import LockIcon from '../../assets/lock.svg';
 import PersonIcon from '../../assets/person.svg';
-import SignInput from '../../components/SignInput';
+import {FormInput} from '../../components/SignInput';
 import api from '../../api';
 import Ionic from 'react-native-vector-icons/Ionicons';
 import {Alert} from 'react-native';
 import BackIcon from '../../assets/back.svg';
+import {TextInput} from 'react-native-paper';
 
 export default () => {
   const inputRef = useRef(null);
@@ -94,23 +95,32 @@ export default () => {
             <TextTitle>
               Preencha todos os campos para fazer as alterações
             </TextTitle>
-            <SignInput
+            <FormInput
+              label="Nome"
               IconSvg={PersonIcon}
               placeholder="Alterar Nome"
               value={nameField}
               onChangeText={t => setNameField(t)}
               onSubmitEditing={() => inputRef.current.focus()}
+              style={{backgroundColor: '#1c1c1c'}}
+              left={
+                <TextInput.Icon icon={'account-outline'} iconColor="#ddd" />
+              }
             />
-            <SignInput
+            <FormInput
+              label="Email"
               referencia={inputRef}
               IconSvg={EmailIcon}
               placeholder="Alterar Email"
               value={emailField}
               onChangeText={t => setEmailField(t)}
               onSubmitEditing={() => ChangePasswordRef.current.focus()}
+              style={{backgroundColor: '#1c1c1c'}}
+              left={<TextInput.Icon icon={'email-outline'} iconColor="#ddd" />}
             />
 
-            <SignInput
+            <FormInput
+              label="Senha"
               referencia={ChangePasswordRef}
               IconSvg={LockIcon}
               placeholder="Alterar senha"
@@ -118,16 +128,21 @@ export default () => {
               onChangeText={t => setPasswordField(t)}
               password={showPassword}
               onSubmitEditing={() => ChangePasswordCRef.current.focus()}
+              style={{backgroundColor: '#1c1c1c'}}
+              left={<TextInput.Icon icon={'lock-outline'} iconColor="#ddd" />}
+              right={
+                <TextInput.Icon
+                  icon={showPassword ? 'eye' : 'eye-off'}
+                  iconColor="#ddd"
+                  onPress={() => {
+                    setShowPassword(!showPassword);
+                  }}
+                />
+              }
             />
-            <EyeButton onPress={handleShowPassword}>
-              {showPassword ? (
-                <Ionic name="eye-outline" size={25} color="#ddd" />
-              ) : (
-                <Ionic name="eye-off-outline" size={25} color="#ddd" />
-              )}
-            </EyeButton>
 
-            <SignInput
+            <FormInput
+              label="Confirmar senha"
               referencia={ChangePasswordCRef}
               IconSvg={LockIcon}
               placeholder="Confirmar senha"
@@ -135,6 +150,8 @@ export default () => {
               onChangeText={t => setPasswordFieldC(t)}
               password={showPassword}
               onSubmitEditing={UpdateInfo}
+              style={{backgroundColor: '#1c1c1c'}}
+              left={<TextInput.Icon icon={'lock-outline'} iconColor="#ddd" />}
             />
             <CustomButton activeOpacity={0.75} onPress={UpdateInfo}>
               <CustomButtonText>Alterar informações</CustomButtonText>

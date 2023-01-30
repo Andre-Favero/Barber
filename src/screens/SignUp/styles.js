@@ -19,6 +19,7 @@ export const CustomButton = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  margin-top: 20px;
 `;
 export const CustomButtonText = styled.Text`
   font-size: 18px;
