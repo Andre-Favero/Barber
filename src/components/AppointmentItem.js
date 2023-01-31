@@ -28,6 +28,12 @@ const UserArea = styled.View`
   flex-direction: row;
   align-items: center;
 `;
+const UserAreaModal = styled.View`
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -40px;
+`;
 const Avatar = styled.Image`
   width: 56px;
   height: 56px;
@@ -50,6 +56,16 @@ const ServiceText = styled.Text`
   font-weight: bold;
   color: #fff;
 `;
+const ServiceTextModal = styled.Text`
+  font-size: 16px;
+  font-weight: bold;
+  color: #43ff51;
+`;
+const ServiceDesc = styled.Text`
+  font-size: 12px;
+  font-weight: bold;
+  color: #444;
+`;
 
 const DataText = styled.Text`
   font-size: 16px;
@@ -62,6 +78,7 @@ const DataText = styled.Text`
 const CloseButton = styled.TouchableOpacity`
   width: 40px;
   height: 40px;
+  margin: -5px;
 `;
 
 export default ({data}) => {
@@ -105,21 +122,24 @@ export default ({data}) => {
         <ModalArea>
           <ModalBody>
             <CloseButton onPress={handleCloseModal}>
-              <CloseModal width="40" height="40" stroke="#fff" />
+              <CloseModal width="20" height="20" stroke="#fff" />
             </CloseButton>
 
-            <UserArea>
+            <UserAreaModal>
               <Avatar source={{uri: data.barber.avatar}} />
               <UserName>{data.barber.name}</UserName>
-            </UserArea>
+            </UserAreaModal>
             <SplitArea>
               <ServiceText> {data.service.name} </ServiceText>
-              <ServiceText>R$ {data.service.price.toFixed(2)} </ServiceText>
+              <ServiceTextModal>
+                R$ {data.service.price.toFixed(2)}{' '}
+              </ServiceTextModal>
             </SplitArea>
             <SplitArea>
               <DataText>{dateString}</DataText>
               <DataText>{time}</DataText>
             </SplitArea>
+            <ServiceDesc>Descrição: Não informado</ServiceDesc>
           </ModalBody>
         </ModalArea>
       </Modal>
