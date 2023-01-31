@@ -1,8 +1,8 @@
 import React from 'react';
 import * as C from '../screens/Home/styles';
 import IconFeather from 'react-native-vector-icons/Feather';
-import {Alert} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import openMap from 'react-native-open-maps';
 
 export default () => {
   const navigation = useNavigation();
@@ -15,6 +15,9 @@ export default () => {
   };
   const handleClickEquipe = () => {
     navigation.navigate('Equipe');
+  };
+  const hangleOpenMap = () => {
+    openMap({latitude: -27.0954059, longitude: -52.608981});
   };
 
   return (
@@ -38,9 +41,7 @@ export default () => {
         <C.TextButtonOpc>Equipe</C.TextButtonOpc>
       </C.ButtonAreaInside>
       <C.ButtonAreaInside>
-        <C.ButtonOpc
-          activeOpacity={0.6}
-          onPress={() => Alert.alert('Ver mapa')}>
+        <C.ButtonOpc activeOpacity={0.6} onPress={hangleOpenMap}>
           <IconFeather name="map" size={30} color="#fc5f0f" />
         </C.ButtonOpc>
         <C.TextButtonOpc>Ver Mapa</C.TextButtonOpc>
