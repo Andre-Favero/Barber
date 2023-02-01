@@ -55,6 +55,11 @@ export default () => {
           <BarberDesc key={k} data={item} />
         ))}
       </ListArea>
+      {/* <FlatList
+              data={listBarbers}
+              renderItem={({item}) => <BarberDesc data={item} />}
+              keyExtractor={item => item.id}
+            />; */}
     </Container>
   ) : (
     <LoadingIcon size="large" color="#FFFFFF" />

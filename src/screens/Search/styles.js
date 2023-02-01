@@ -57,7 +57,7 @@ export const ImagePreload = styled.Image`
   height: 300px;
   align-items: center;
   justify-content: center;
-  margin-top: 101px;
+  margin-top: 50px;
 `;
 export const ImagePreloadlarge = styled.Image`
   width: 100%;

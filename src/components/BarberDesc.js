@@ -33,7 +33,7 @@ const InfoAreaFav = styled.View`
 `;
 
 const UserName = styled.Text`
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   color: #999;
 `;
