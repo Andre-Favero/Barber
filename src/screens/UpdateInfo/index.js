@@ -10,9 +10,6 @@ import {
   BackButton,
   TextTitle,
 } from './styles';
-import EmailIcon from '../../assets/email.svg';
-import LockIcon from '../../assets/lock.svg';
-import PersonIcon from '../../assets/person.svg';
 import {FormInput} from '../../components/SignInput';
 import api from '../../api';
 import BackIcon from '../../assets/back.svg';
@@ -91,7 +88,6 @@ export default () => {
             </TextTitle>
             <FormInput
               label="Nome"
-              IconSvg={PersonIcon}
               placeholder="Alterar Nome"
               value={nameField}
               onChangeText={t => setNameField(t)}
@@ -104,7 +100,6 @@ export default () => {
             <FormInput
               label="Email"
               ref={inputRef}
-              IconSvg={EmailIcon}
               placeholder="Alterar Email"
               value={emailField}
               onChangeText={t => setEmailField(t)}
@@ -116,7 +111,6 @@ export default () => {
             <FormInput
               label="Senha"
               ref={ChangePasswordRef}
-              IconSvg={LockIcon}
               placeholder="Alterar senha"
               value={passwordField}
               onChangeText={t => setPasswordField(t)}
@@ -138,7 +132,6 @@ export default () => {
             <FormInput
               label="Confirmar senha"
               ref={ChangePasswordCRef}
-              IconSvg={LockIcon}
               placeholder="Confirmar senha"
               value={passwordFieldC}
               onChangeText={t => setPasswordFieldC(t)}

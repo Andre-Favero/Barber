@@ -12,9 +12,7 @@ import {
   ImageRegister,
   ContentArea,
 } from './styles';
-import EmailIcon from '../../assets/email.svg';
-import LockIcon from '../../assets/lock.svg';
-import PersonIcon from '../../assets/person.svg';
+
 import {FormInput} from '../../components/SignInput';
 
 import AsyncStorage from '@react-native-community/async-storage';
@@ -68,7 +66,6 @@ export default () => {
         <InputArea>
           <FormInput
             label="Nome"
-            IconSvg={PersonIcon}
             placeholder="Digite seu Nome"
             value={nameField}
             onChangeText={t => setNameField(t)}
@@ -79,7 +76,6 @@ export default () => {
           <FormInput
             label="Email"
             ref={refEmail}
-            IconSvg={EmailIcon}
             placeholder="Digite seu Email"
             value={emailField}
             onChangeText={t => setEmailField(t)}
@@ -90,7 +86,6 @@ export default () => {
           <FormInput
             label="Senha"
             ref={refSenha}
-            IconSvg={LockIcon}
             placeholder="Digite sua senha"
             value={passwordField}
             secureTextEntry={showPassword}

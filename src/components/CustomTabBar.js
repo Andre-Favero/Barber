@@ -19,16 +19,16 @@ const TabItem = styled.TouchableOpacity`
   flex: 1;
 `;
 
-const TabItemCenter = styled.TouchableOpacity`
-  width: 24px;
-  height: 24px;
-  justify-content: center;
-  align-items: center;
-  /* background-color: #2f2f2f;
-  border-radius: 35px; */
-  /* border: 6px solid ${props => (props.state === 2 ? '#333' : '#333')};
-  margin-top: -30px; */
-`;
+// const TabItemCenter = styled.TouchableOpacity`
+//   width: 24px;
+//   height: 24px;
+//   justify-content: center;
+//   align-items: center;
+//   /* background-color: #2f2f2f;
+//   border-radius: 35px; */
+//   /* border: 6px solid ${props => (props.state === 2 ? '#333' : '#333')};
+//   margin-top: -30px; */
+// `;
 
 const TextTab = styled.Text`
   font-size: 10px;
