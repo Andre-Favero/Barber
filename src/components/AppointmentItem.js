@@ -32,7 +32,6 @@ const UserAreaModal = styled.View`
   flex: 1;
   flex-direction: row;
   align-items: center;
-  margin-top: -40px;
 `;
 const Avatar = styled.Image`
   width: 56px;
@@ -65,6 +64,7 @@ const ServiceDesc = styled.Text`
   font-size: 12px;
   font-weight: bold;
   color: #444;
+  margin-top: 20px;
 `;
 
 const DataText = styled.Text`
@@ -121,11 +121,10 @@ export default ({data}) => {
       <Modal transparent={true} visible={showModal} animationType="fade">
         <ModalArea>
           <ModalBody>
-            <CloseButton onPress={handleCloseModal}>
-              <CloseModal width="20" height="20" stroke="#fff" />
-            </CloseButton>
-
             <UserAreaModal>
+              <CloseButton onPress={handleCloseModal}>
+                <CloseModal width="20" height="20" stroke="#fff" />
+              </CloseButton>
               <Avatar source={{uri: data.barber.avatar}} />
               <UserName>{data.barber.name}</UserName>
             </UserAreaModal>
