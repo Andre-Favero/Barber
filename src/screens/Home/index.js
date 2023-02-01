@@ -1,14 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import * as C from './styles';
 import HomeButtons from '../../components/HomeButtons';
 import ComodidadesButtons from '../../components/ComodidadesButtons';
 import AboutUs from '../../components/AboutUs';
-import api from '../../api';
-import {Alert, RefreshControl} from 'react-native';
+import {RefreshControl} from 'react-native';
 
 export default () => {
-  const [locationText, setLocationText] = useState('');
-  const [loading, setLoading] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = () => {
