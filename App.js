@@ -9,6 +9,9 @@ export default () => {
   useEffect(() => {
     async function requestUserPermission() {
       const authStatus = await messaging().requestPermission();
+      const getToken = await messaging().getToken();
+      console.log(getToken);
+
       const enabled =
         authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
         authStatus === messaging.AuthorizationStatus.PROVISIONAL;
