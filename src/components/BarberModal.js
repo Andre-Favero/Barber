@@ -12,11 +12,11 @@ const Modal = styled.Modal``;
 
 const ModalArea = styled.View`
   flex: 1;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(17, 17, 17, 0.5);
   justify-content: flex-end;
 `;
 const ModalBody = styled.View`
-  background-color: #000;
+  background-color: #0a0a0a;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   padding: 10px 20px 40px 20px;
