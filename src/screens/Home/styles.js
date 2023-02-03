@@ -60,10 +60,11 @@ export const TextPage = styled.Text`
   color: #fff;
   font-size: 20px;
 `;
+
 export const Divider = styled.View`
   width: 96%;
   height: 1px;
-  background-color: #999;
+  background-color: #222;
   align-items: center;
   justify-content: center;
   margin-left: 2%;
@@ -76,18 +77,21 @@ export const TextTitleBody = styled.Text`
   font-weight: bold;
   margin: 15px;
 `;
+
 export const TextButtonOpc = styled.Text`
   font-size: 14px;
   color: #fff;
   font-weight: bold;
   margin-top: 8px;
 `;
+
 export const TextDesc = styled.Text`
   color: #999;
   font-size: 15px;
   margin-left: 15px;
   margin-bottom: 20px;
 `;
+
 export const Comodidades = styled.TouchableOpacity`
   width: 50px;
   height: 50px;
@@ -96,6 +100,7 @@ export const Comodidades = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
 `;
+
 export const ComodidadeImg = styled.Image`
   width: 30px;
   height: 30px;
@@ -105,6 +110,7 @@ export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #111;
 `;
+
 export const Scroller = styled.ScrollView`
   flex: 1;
   padding: 20px;
@@ -154,10 +160,17 @@ export const LocationFinder = styled.TouchableOpacity`
 export const LoadingIcon = styled.ActivityIndicator`
   margin-top: 50px;
 `;
+
 export const ListArea = styled.View`
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
   flex: 1;
   margin-top: 30px;
+`;
+
+export const VersionText = styled.Text`
+  font-size: 10px;
+  color: #666;
+  margin: 10px;
 `;
