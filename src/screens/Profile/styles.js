@@ -98,3 +98,10 @@ export const TextProfileArea = styled.View`
   align-items: flex-start;
 `;
 export const LoadingIcon = styled.ActivityIndicator``;
+
+export const SettingArea = styled.TouchableOpacity`
+  flex: 1;
+  margin: 20px;
+  margin-bottom: -40px;
+  align-items: flex-end;
+`;

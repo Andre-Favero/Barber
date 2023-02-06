@@ -9,6 +9,7 @@ import UpdateInfo from '../screens/UpdateInfo';
 import Noticias from '../screens/Noticias';
 import Agendar from '../screens/Agendar';
 import Equipe from '../screens/Equipe';
+import Settings from '../screens/SettingsScreen';
 const Stack = createStackNavigator();
 
 export default () => (
@@ -26,5 +27,6 @@ export default () => (
     <Stack.Screen name="Noticias" component={Noticias} />
     <Stack.Screen name="Agendar" component={Agendar} />
     <Stack.Screen name="Equipe" component={Equipe} />
+    <Stack.Screen name="Settings" component={Settings} />
   </Stack.Navigator>
 );

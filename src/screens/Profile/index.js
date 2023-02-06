@@ -14,12 +14,14 @@ import {
   ImagePreloadlarge,
   LoadingIcon,
   ImagePreloadArea,
+  SettingArea,
 } from './styles';
 import api from '../../api';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {Alert} from 'react-native';
 import {UserContext} from '../../contexts/UserContext';
 import {useIsFocused} from '@react-navigation/native';
+import IconFeather from 'react-native-vector-icons/Feather';
 
 export default () => {
   const isFocused = useIsFocused();
@@ -44,6 +46,10 @@ export default () => {
     navigation.navigate('UpdateInfo');
   };
 
+  const handleSettings = () => {
+    navigation.navigate('Settings');
+  };
+
   useEffect(() => {
     const getUser = async () => {
       let json = await api.getUserInfo();
@@ -60,7 +66,9 @@ export default () => {
   return (
     <Container>
       {loading && <LoadingIcon />}
-
+      <SettingArea activeOpacity={0.8} onPress={handleSettings}>
+        <IconFeather name="settings" size={26} color="#fff" />
+      </SettingArea>
       <ProfileImageArea>
         <ProfileImage source={{uri: user.avatar}} />
         <TextProfileArea>
