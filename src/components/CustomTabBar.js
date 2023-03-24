@@ -6,6 +6,8 @@ import HomeIcon from '../assets/home.svg';
 import SearchIcon from '../assets/search.svg';
 import TodayIcon from '../assets/today.svg';
 import FavoriteIcon from '../assets/favorite.svg';
+import FavoriteFullIcon from '../assets/favorite_full.svg';
+import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const TabArea = styled.View`
   height: 60px;
@@ -54,50 +56,68 @@ export default ({state, navigation}) => {
         style={{opacity: state.index === 0 ? 1 : 0.5}}
         onPress={() => goTo('Home')}>
         {state.index === 0 ? (
-          <HomeIcon width="24" height="24" fill="#Fc5f0f" />
+          <>
+            <MCIcons name="home-outline" size={24} color={'#fc5f0f'} />
+            <TextTab style={{color: '#fc5f0f'}}>Inicio</TextTab>
+          </>
         ) : (
-          <HomeIcon width="24" height="24" fill="#FFF" />
-        )}
+          <>
+            <MCIcons name="home-outline" size={24} color={'#fff'} />
 
-        <TextTab>Inicio</TextTab>
+            <TextTab>Inicio</TextTab>
+          </>
+        )}
       </TabItem>
 
       <TabItem onPress={() => goTo('Search')}>
         {state.index === 1 ? (
-          <SearchIcon width="24" height="24" fill="#Fc5f0f" />
+          <>
+            <SearchIcon width="24" height="24" fill="#Fc5f0f" />
+            <TextTab style={{color: '#fc5f0f'}}>Buscar</TextTab>
+          </>
         ) : (
-          <SearchIcon width="24" height="24" fill="#FFF" />
+          <>
+            <SearchIcon width="24" height="24" fill="#FFF" />
+            <TextTab>Buscar</TextTab>
+          </>
         )}
-
-        <TextTab>Buscar</TextTab>
       </TabItem>
 
-      <TabItem
-        activeOpacity={0.9}
-        onPress={() => goTo('Appointments')}
-        state={state.index}>
+      <TabItem onPress={() => goTo('Appointments')} state={state.index}>
         {state.index === 2 ? (
-          <TodayIcon width="24" height="24" fill="#Fc5f0f" />
+          <>
+            <TodayIcon width="24" height="24" fill="#Fc5f0f" />
+            <TextTab style={{color: '#fc5f0f'}}>Agenda</TextTab>
+          </>
         ) : (
-          <TodayIcon width="24" height="24" fill="#FFF" />
+          <>
+            <TodayIcon width="24" height="24" fill="#FFF" />
+            <TextTab>Agenda</TextTab>
+          </>
         )}
-        <TextTab>Agenda</TextTab>
       </TabItem>
 
       <TabItem onPress={() => goTo('Favorites')}>
         {state.index === 3 ? (
-          <FavoriteIcon width="24" height="24" fill="#Fc5f0f" />
+          <>
+            <FavoriteFullIcon width="24" height="24" fill="#Fc5f0f" />
+            <TextTab style={{color: '#fc5f0f'}}>Favoritos</TextTab>
+          </>
         ) : (
-          <FavoriteIcon width="24" height="24" fill="#FFF" />
+          <>
+            <FavoriteIcon width="24" height="24" fill="#FFF" />
+            <TextTab>Favoritos</TextTab>
+          </>
         )}
-
-        <TextTab>Favoritos</TextTab>
       </TabItem>
 
-      <TabItem activeOpacity={0.5} onPress={() => goTo('Profile')}>
+      <TabItem onPress={() => goTo('Profile')}>
         <PerfilAvatar state={state.index} source={{uri: user.avatar}} />
-
-        <TextTab>Perfil</TextTab>
+        {state.index === 4 ? (
+          <TextTab style={{color: '#fc5f0f'}}>Perfil</TextTab>
+        ) : (
+          <TextTab>Perfil</TextTab>
+        )}
       </TabItem>
     </TabArea>
   );
