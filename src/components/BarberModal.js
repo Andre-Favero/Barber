@@ -8,6 +8,7 @@ import DateNextIcon from '../assets/nav_next.svg';
 import ExpandIcon from '../assets/expand.svg';
 import {Alert} from 'react-native';
 import api from '../api';
+import moment from 'moment';
 const Modal = styled.Modal``;
 
 const ModalArea = styled.View`
@@ -181,8 +182,9 @@ export default ({show, setShow, user, service}) => {
       for (let i = 1; i <= daysInMouth; i++) {
         let d = new Date(selectedYear, selectedMouth, i);
         let year = d.getFullYear();
-        let mouth = d.getMonth();
+        let mouth = d.getMonth() + 1;
         let day = d.getDate();
+
         mouth = mouth < 10 ? '0' + mouth : mouth;
         day = day < 10 ? '0' + day : day;
         let selDate = `${year}-${mouth}-${day}`;
@@ -207,7 +209,7 @@ export default ({show, setShow, user, service}) => {
     if (user.available && selectedDay > 0) {
       let d = new Date(selectedYear, selectedMouth, selectedDay);
       let year = d.getFullYear();
-      let mouth = d.getMonth();
+      let mouth = d.getMonth() + 1;
       let day = d.getDate();
       mouth = mouth < 10 ? '0' + mouth : mouth;
       day = day < 10 ? '0' + day : day;
@@ -246,10 +248,11 @@ export default ({show, setShow, user, service}) => {
         user.id,
         user.services[service].id,
         selectedYear,
-        selectedMouth,
+        selectedMouth + 1,
         selectedDay,
         selectedHour,
       );
+
       if (res.error === '') {
         setShow(false);
         navigation.navigate('Appointments');
