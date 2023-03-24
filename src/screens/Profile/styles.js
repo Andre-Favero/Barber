@@ -4,18 +4,6 @@ export const Container = styled.ScrollView`
   flex: 1;
 `;
 
-export const Logout = styled.TouchableOpacity`
-  width: 80%;
-  height: 40px;
-  background-color: #1c1c1c;
-  border: 1px solid #ed5757;
-  border-radius: 5px;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-  margin-left: 20px;
-  margin-bottom: 10px;
-`;
 export const InfoButton = styled.TouchableOpacity`
   width: 80%;
   height: 40px;
@@ -53,8 +41,9 @@ export const ButtonArea = styled.View`
 `;
 
 export const TextButton = styled.Text`
-  color: #ed5757;
-  font-size: 18px;
+  color: #f0644c;
+  margin-top: 15px;
+  font-size: 14px;
   font-weight: bold;
 `;
 export const TextProfile = styled.Text`

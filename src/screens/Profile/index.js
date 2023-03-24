@@ -1,11 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {
   Container,
-  Logout,
   TextButton,
-  ButtonArea,
-  TextButtonInfo,
-  InfoButton,
   ProfileImage,
   ProfileImageArea,
   TextProfile,
@@ -46,10 +42,6 @@ export default () => {
     navigation.navigate('UpdateInfo');
   };
 
-  const handleSettings = () => {
-    navigation.navigate('Settings');
-  };
-
   useEffect(() => {
     const getUser = async () => {
       let json = await api.getUserInfo();
@@ -66,7 +58,7 @@ export default () => {
   return (
     <Container>
       {loading && <LoadingIcon />}
-      <SettingArea activeOpacity={0.8} onPress={handleSettings}>
+      <SettingArea activeOpacity={0.8} onPress={handleUpdateInfo}>
         <IconFeather name="settings" size={26} color="#fff" />
       </SettingArea>
       <ProfileImageArea>
@@ -74,20 +66,12 @@ export default () => {
         <TextProfileArea>
           <TextProfile>{userInfo.name}</TextProfile>
           <TextProfileEmail>{userInfo.email}</TextProfileEmail>
+          <TextButton onPress={handleLogout}>Sair</TextButton>
         </TextProfileArea>
       </ProfileImageArea>
       <ImagePreloadArea>
         <ImagePreloadlarge source={require('../../assets/profileBody.png')} />
       </ImagePreloadArea>
-
-      <ButtonArea>
-        <InfoButton onPress={handleUpdateInfo} activeOpacity={0.8}>
-          <TextButtonInfo>Alterar credenciais</TextButtonInfo>
-        </InfoButton>
-        <Logout onPress={handleLogout} activeOpacity={0.8}>
-          <TextButton>Sair</TextButton>
-        </Logout>
-      </ButtonArea>
     </Container>
   );
 };
