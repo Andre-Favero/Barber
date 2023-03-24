@@ -25,7 +25,6 @@ export default () => {
 
   const getAppointments = async () => {
     setLoading(true);
-    setList([]);
 
     let res = await api.getAppointments();
     if (res.error === '') {

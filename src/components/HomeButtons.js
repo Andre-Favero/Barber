@@ -24,27 +24,30 @@ export default () => {
     <C.ButtonArea>
       <C.ButtonAreaInside>
         <C.ButtonOpc activeOpacity={0.6} onPress={handleClickNoticias}>
-          <IconFeather name="bell" size={30} color="#fc5f0f" />
+          <IconFeather name="bell" size={30} color="#000" />
+          <C.TextButtonOpc>Noticias</C.TextButtonOpc>
         </C.ButtonOpc>
-        <C.TextButtonOpc>Noticias</C.TextButtonOpc>
       </C.ButtonAreaInside>
+
       <C.ButtonAreaInside>
         <C.ButtonOpc activeOpacity={0.6} onPress={handleClickAgenda}>
-          <IconFeather name="scissors" size={30} color="#fc5f0f" />
+          <IconFeather name="scissors" size={30} color="#000" />
+          <C.TextButtonOpc>Agendar</C.TextButtonOpc>
         </C.ButtonOpc>
-        <C.TextButtonOpc>Agendar</C.TextButtonOpc>
       </C.ButtonAreaInside>
+
       <C.ButtonAreaInside>
         <C.ButtonOpc activeOpacity={0.6} onPress={handleClickEquipe}>
-          <IconFeather name="users" size={30} color="#fc5f0f" />
+          <IconFeather name="users" size={30} color="#000" />
+          <C.TextButtonOpc>Equipe</C.TextButtonOpc>
         </C.ButtonOpc>
-        <C.TextButtonOpc>Equipe</C.TextButtonOpc>
       </C.ButtonAreaInside>
+
       <C.ButtonAreaInside>
         <C.ButtonOpc activeOpacity={0.6} onPress={hangleOpenMap}>
-          <IconFeather name="map" size={30} color="#fc5f0f" />
+          <IconFeather name="map" size={30} color="#000" />
+          <C.TextButtonOpc>Ver Mapa</C.TextButtonOpc>
         </C.ButtonOpc>
-        <C.TextButtonOpc>Ver Mapa</C.TextButtonOpc>
       </C.ButtonAreaInside>
     </C.ButtonArea>
   );

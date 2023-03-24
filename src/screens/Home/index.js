@@ -30,7 +30,7 @@ export default () => {
         <C.Divider />
         <ComodidadesButtons />
         <C.Divider />
-        <C.VersionText>Versão 0.1.5</C.VersionText>
+        <C.VersionText>Versão 0.1</C.VersionText>
       </C.ContentArea>
     </C.Page>
   );

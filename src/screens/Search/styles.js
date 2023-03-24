@@ -35,7 +35,7 @@ export const ListArea = styled.View`
 `;
 
 export const WarningTextEmptyList = styled.Text`
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
   align-items: flex-start;
 `;

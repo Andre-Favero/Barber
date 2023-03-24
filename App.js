@@ -10,15 +10,10 @@ export default () => {
     async function requestUserPermission() {
       const authStatus = await messaging().requestPermission();
       const getToken = await messaging().getToken();
-      console.log(getToken);
 
       const enabled =
         authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
         authStatus === messaging.AuthorizationStatus.PROVISIONAL;
-
-      if (enabled) {
-        console.log('Authorization status:', authStatus);
-      }
     }
     requestUserPermission();
 

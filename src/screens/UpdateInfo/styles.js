@@ -5,7 +5,7 @@ export const Container = styled.ScrollView`
   flex: 1;
 `;
 export const InputArea = styled.View`
-  padding: 40px;
+  padding: 25px;
   width: 100%;
 `;
 export const CustomButton = styled.TouchableOpacity`
