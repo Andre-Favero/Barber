@@ -29,31 +29,30 @@ export const ImageHomepage = styled.Image`
 `;
 
 export const ButtonArea = styled.View`
-  width: 100%;
-  height: 90px;
+  flex: 1%;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   margin-bottom: 10px;
+  flex-wrap: wrap;
 `;
 export const ButtonAreaInside = styled.View`
-  width: 25%;
-  height: 90px;
+  width: 50%;
+  height: 70px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
-  margin-top: 20px;
 `;
 
 export const ButtonOpc = styled.TouchableOpacity`
-  width: 65px;
-  height: 65px;
+  width: 90%;
+  height: 55px;
+  background-color: #fc5f0f;
   border-radius: 20px;
-  border: 1px solid #fc5f0f;
-  background-color: 000;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  elevation: 10;
 `;
 
 export const TextPage = styled.Text`
@@ -64,7 +63,7 @@ export const TextPage = styled.Text`
 export const Divider = styled.View`
   width: 96%;
   height: 1px;
-  background-color: #222;
+  background-color: #999;
   align-items: center;
   justify-content: center;
   margin-left: 2%;
@@ -80,9 +79,9 @@ export const TextTitleBody = styled.Text`
 
 export const TextButtonOpc = styled.Text`
   font-size: 14px;
-  color: #fff;
+  color: #000;
   font-weight: bold;
-  margin-top: 8px;
+  margin-left: 5px;
 `;
 
 export const TextDesc = styled.Text`
