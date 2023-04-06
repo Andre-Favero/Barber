@@ -1,13 +1,15 @@
+import moment from 'moment';
 import React, {useState} from 'react';
 import styled from 'styled-components/native';
 import CloseModal from '../assets/closeModal.svg';
+moment.locale('pt-br');
 
 const Modal = styled.Modal``;
 
 const ModalArea = styled.View`
   flex: 1;
   background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
+  justify-content: flex-end;
 `;
 const ModalBody = styled.View`
   background-color: #1c1c1c;
@@ -91,19 +93,14 @@ export default ({data}) => {
     setShowModal(true);
   };
 
-  let d = data.datetime.split(' ');
-  let time = d[1].substring(0, 5);
+  const dateString = moment(data.datetime).format('DD/MM/YYYY');
+  const dataAgenda = new Date(data.datetime);
+  const agora = new Date();
+  const time = moment(data.datetime).format('HH:mm');
 
-  let date = new Date(d[0]);
-  let year = date.getFullYear();
-  let month = date.getMonth() + 2;
-  let day = date.getDate();
+  let dataMaior = dataAgenda >= agora;
 
-  month = month < 10 ? '0' + month : month;
-  day = day < 10 ? '0' + day : day;
-  let dateString = `${day}/${month}/${year}`;
-
-  return (
+  return dataMaior ? (
     <Area activeOpacity={0.8} onPress={handleOpenModal}>
       <UserArea>
         <Avatar source={{uri: data.barber.avatar}} />
@@ -143,5 +140,5 @@ export default ({data}) => {
         </ModalArea>
       </Modal>
     </Area>
-  );
+  ) : null;
 };

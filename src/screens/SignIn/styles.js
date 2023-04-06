@@ -43,8 +43,9 @@ export const SignMessageButtonTextBold = styled.Text`
 `;
 
 export const ImageLogin = styled.Image`
-  width: 90%;
-  height: 180px;
-  margin-right: 74px;
-  margin-top: 20px;
+  width: 80%;
+  height: 220px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
 `;
